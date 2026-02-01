@@ -3,24 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="Smolcluster - A distributed deep learning library for training neural networks across heterogeneous hardware using PyTorch.">
+  <meta name="keywords" content="Smolcluster, Distributed Training, Deep Learning, PyTorch, Model Parallelism">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+  <title>Smolcluster - Distributed Deep Learning Library</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -52,33 +38,12 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://github.com/YuvrajSingh-mist/smolcluster">
       <span class="icon">
-          <i class="fas fa-home"></i>
+          <i class="fab fa-github"></i>
       </span>
       </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
     </div>
-
   </div>
 </nav>
 
@@ -88,368 +53,279 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">Smolcluster</h1>
+          <h2 class="subtitle is-3">Distributed Deep Learning Library</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              Training neural networks across heterogeneous hardware with PyTorch
             </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+              <!-- GitHub Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/YuvrajSingh-mist/smolcluster"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
-                  </a>
+                  <span>GitHub</span>
+                </a>
               </span>
-              <!-- Dataset Link. -->
+              <!-- Documentation Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="https://github.com/YuvrajSingh-mist/smolcluster#documentation"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="far fa-images"></i>
+                      <i class="fas fa-book"></i>
                   </span>
-                  <span>Data</span>
-                  </a>
+                  <span>Documentation</span>
+                </a>
+              </span>
             </div>
 
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    <!-- Overview. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            <strong>Smolcluster</strong> is a distributed deep learning library designed for training neural networks 
+            across heterogeneous hardware using PyTorch and socket-based communication. It enables researchers and developers 
+            to leverage multiple machines with different capabilities for distributed training and inference.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            The library supports various distributed training algorithms including Elastic Distributed Parallelism (EDP), 
+            Synchronous Parameter Server (SyncPS), and Model Parallelism. It can run on diverse hardware including Mac minis, 
+            Raspberry Pis, MacBooks, and Windows machines.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    <!--/ Overview. -->
 
-    <!-- Paper video. -->
+    <!-- Architecture Image. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+      <div class="column is-full-width">
+        <h2 class="title is-3">Cluster Architecture</h2>
+        <img src="./static/images/architecture.png" alt="Smolcluster Architecture Diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
       </div>
     </div>
-    <!--/ Paper video. -->
+    <!--/ Architecture Image. -->
   </div>
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
-
+    <!-- Features. -->
     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Key Features</h2>
 
-      <!-- Visual Effects. -->
-      <div class="column">
+        <div class="content has-text-justified">
+          <h3 class="title is-4">🔄 Distributed Training Algorithms</h3>
+          <ul>
+            <li><strong>Elastic Distributed Parallelism (EDP)</strong> - Asynchronous data parallelism with stale gradient tolerance, ideal for heterogeneous clusters</li>
+            <li><strong>Synchronous Parameter Server (SyncPS)</strong> - Synchronous data parallelism with barrier coordination for homogeneous clusters</li>
+            <li><strong>Model Parallelism (MP)</strong> - Layer-wise model distribution perfect for large models and inference serving</li>
+          </ul>
+
+          <h3 class="title is-4">🖥️ Hardware Support</h3>
+          <p>
+            Train across heterogeneous hardware including Mac minis, Raspberry Pis, MacBooks, and Windows machines. 
+            The framework intelligently handles different hardware capabilities and network latencies.
+          </p>
+
+          <h3 class="title is-4">🤖 Model Support</h3>
+          <p>
+            Built-in support for MNIST, GPT-2, and custom neural networks. Includes distributed inference with 
+            model parallelism and streaming token generation for language models.
+          </p>
+
+          <h3 class="title is-4">📊 Monitoring & Logging</h3>
+          <ul>
+            <li><strong>Grafana + Loki</strong> - Centralized log aggregation with real-time queries across all nodes</li>
+            <li><strong>Weights & Biases Integration</strong> - Automatic tracking of training metrics, gradient norms, and hardware utilization</li>
+            <li><strong>Web Interface</strong> - React-based chat UI for GPT inference</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Features. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Demo Video. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Demo</h2>
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
+          <p>Watch Smolcluster in action with distributed training across heterogeneous hardware:</p>
+          <video controls style="max-width: 100%; height: auto; margin: 20px 0;">
+            <source src="./static/videos/Screen Recording 2026-01-31 at 21.00.17.mov" type="video/quicktime">
+            Your browser does not support the video tag.
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
     </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
+    <!--/ Demo Video. -->
   </div>
 </section>
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Getting Started. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Getting Started</h2>
+
+        <div class="content">
+          <p><strong>Note:</strong> Smolcluster requires a distributed hardware setup and network configuration before you can begin training. This is not a straightforward installation.</p>
+          
+          <h4>Prerequisites</h4>
+          <p>Before using Smolcluster, you need to set up your distributed cluster:</p>
+          <ul>
+            <li><strong>Hardware Setup:</strong> Configure your machines (Mac minis, Raspberry Pis, GPUs, etc.)</li>
+            <li><strong>Network Configuration:</strong>
+              <ul>
+                <li>Mac minis: Thunderbolt connections and network bridges</li>
+                <li>Raspberry Pi/GPUs: Ethernet connections</li>
+                <li>SSH setup with proper gateways and key authentication</li>
+              </ul>
+            </li>
+            <li><strong>Cluster Configuration:</strong> YAML configuration files for your specific topology</li>
+          </ul>
+
+          <h4>Installation</h4>
+          <p>Once your cluster is properly configured:</p>
+          <pre><code># Install uv package manager
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Clone and install
+git clone https://github.com/YuvrajSingh-mist/smolcluster.git
+cd smolcluster
+uv sync</code></pre>
+
+          <p><strong>Important:</strong> Please refer to the <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/main/docs/setup_cluster.md">Cluster Setup Guide</a> for detailed hardware setup, networking configuration, and troubleshooting before attempting to run training scripts.</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Quick Start. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Technical Details. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Technical Details</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Smolcluster implements a distributed training system designed from the ground up for heterogeneous hardware. 
+            The library supports multiple distributed training paradigms, each optimized for different cluster configurations 
+            and network topologies.
+          </p>
+
+          <h3 class="title is-4">Communication Infrastructure</h3>
+          <ul>
+            <li><strong>Socket-based Communication</strong> - Raw TCP sockets for reliable, low-level control over gradient and activation transfers between nodes. No dependency on MPI or specialized networking libraries.</li>
+            <li><strong>Pickle Serialization</strong> - PyTorch tensors serialized with pickle for efficient network transmission, with optional gradient quantization for bandwidth reduction.</li>
+            <li><strong>Hybrid Network Support</strong> - Handles complex topologies mixing Thunderbolt fabric (10Gbps+) and Ethernet edge connections (1Gbps), with proper routing and gateway configuration.</li>
+            <li><strong>Asynchronous I/O</strong> - Non-blocking socket operations enable workers to compute while waiting for network transfers in EDP mode.</li>
+          </ul>
+
+          <h3 class="title is-4">Distributed Training Modes</h3>
+          <ul>
+            <li><strong>Elastic Distributed Parallelism (EDP)</strong> - Workers train independently with stale gradient tolerance. The parameter server accepts gradients from any model version, making it resilient to stragglers and network latency variance. Workers periodically pull the latest weights without synchronization barriers.</li>
+            <li><strong>Synchronous Parameter Server (SyncPS)</strong> - Barrier-based coordination where the server waits for all workers to submit gradients before updating. Uses Polyak averaging and synchronous weight broadcasts for faster convergence on homogeneous clusters.</li>
+            <li><strong>Model Parallelism</strong> - Sequential layer distribution across nodes with activation forwarding. Enables training and inference of models exceeding single-device memory. Each worker holds a subset of layers and forwards activations to the next rank.</li>
+          </ul>
+
+          <h3 class="title is-4">Data Management</h3>
+          <ul>
+            <li><strong>Automatic Data Partitioning</strong> - Dataset automatically sharded across workers based on global rank and world size, ensuring no data overlap.</li>
+            <li><strong>Deterministic Shuffling</strong> - Seeded random number generators ensure reproducible data ordering across runs.</li>
+            <li><strong>Streaming Support</strong> - Memory-efficient data loading for large datasets with PyTorch DataLoader integration.</li>
+          </ul>
+
+          <h3 class="title is-4">Fault Tolerance & Monitoring</h3>
+          <ul>
+            <li><strong>Checkpointing</strong> - Periodic model snapshots with configurable intervals. Supports resuming training from the latest checkpoint after failures.</li>
+            <li><strong>Distributed Logging</strong> - Grafana + Loki stack aggregates logs from all nodes in real-time. Promtail agents on each machine forward structured logs to a central Loki instance.</li>
+            <li><strong>Weights & Biases Integration</strong> - Automatic logging of training metrics, gradient norms, per-layer statistics, and system metrics (GPU utilization, memory usage, network throughput).</li>
+            <li><strong>Timeout Handling</strong> - Configurable timeouts prevent deadlocks when workers fail or network partitions occur.</li>
+          </ul>
+
+          <h3 class="title is-4">Performance Optimizations</h3>
+          <ul>
+            <li><strong>Gradient Quantization</strong> - Optional 8-bit quantization reduces gradient transfer size by 4x with minimal accuracy impact.</li>
+            <li><strong>CPU-based Computation</strong> - Designed to utilize CPU cores on commodity hardware (Mac minis, Raspberry Pis) rather than requiring GPUs.</li>
+            <li><strong>Mixed Precision Training</strong> - FP16 automatic mixed precision support for compatible hardware to accelerate training.</li>
+            <li><strong>Gradient Accumulation</strong> - Simulates larger batch sizes by accumulating gradients over multiple micro-batches before updating.</li>
+          </ul>
+
+          <p><strong>See the architecture diagram above for a visual representation of the cluster topology.</strong></p>
+        </div>
+      </div>
+    </div>
+    <!--/ Technical Details. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Documentation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Documentation</h2>
+
+        <div class="content">
+          <p>Comprehensive guides to help you get the most out of Smolcluster:</p>
+          <ul>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/main/docs/configuration.md">Configuration Guide</a> - Cluster and model configuration</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/main/docs/training.md">Training Guide</a> - Training algorithms and usage</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/main/docs/logging.md">Logging Setup</a> - Grafana + Loki distributed logging</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/main/docs/setup_cluster.md">Cluster Setup</a> - Hardware setup and networking</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/main/docs/inference.md">Inference Guide</a> - Model parallelism inference</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Documentation. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- License. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">License</h2>
+        <div class="content">
+          <p>Smolcluster is released under the MIT License.</p>
+          <p>Contributions are welcome! Visit the <a href="https://github.com/YuvrajSingh-mist/smolcluster">GitHub repository</a> to get involved.</p>
+        </div>
+      </div>
+    </div>
+    <!--/ License. -->
   </div>
 </section>
 
@@ -457,28 +333,15 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/YuvrajSingh-mist/smolcluster" class="external-link">
         <i class="fab fa-github"></i>
       </a>
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
+        <div class="content has-text-centered">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Smolcluster - Distributed Deep Learning Library
           </p>
         </div>
       </div>

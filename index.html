@@ -172,17 +172,20 @@
       <div class="column is-full-width has-text-centered">
         <h2 class="title is-3">Demo</h2>
         <div class="content">
-          <p>
-            Distributed inference of GPT-2 (117M parameters) using Model Parallelism across a heterogeneous cluster. 
-            This demo showcases an iPad client connected to 2× Mac Mini M4 (2025) workers, with model layers 
-            distributed across both machines. The user enters prompts on the iPad, which are processed through 
-            the distributed model with activations forwarding between the Mac Minis, demonstrating real-time 
-            streaming token generation across the cluster.
-          </p>
           <video controls style="max-width: 100%; height: auto; margin: 20px 0;">
             <source src="./static/videos/inference_mp.mov" type="video/quicktime">
             Your browser does not support the video tag.
           </video>
+          <div class="content has-text-left" style="max-width: 800px; margin: 0 auto;">
+            <p><strong>Distributed GPT-2 Inference with Model Parallelism:</strong></p>
+            <ul>
+              <li>Model: GPT-2 (117M parameters)</li>
+              <li>Hardware: iPad client + 2× Mac Mini M4 (2025)</li>
+              <li>Algorithm: Model Parallelism with layer distribution</li>
+              <li>Demo: Real-time streaming token generation across distributed layers</li>
+              <li>Workflow: User prompts from iPad → activations forwarded between Mac Minis → tokens streamed back</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

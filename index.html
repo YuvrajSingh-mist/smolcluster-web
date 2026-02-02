@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="smolcluster - A distributed deep learning library for training neural networks across heterogeneous hardware using PyTorch.">
+        content="smolcluster - A distributed deep learning library for training and inferencing neural networks across heterogeneous hardware using PyTorch.">
   <meta name="keywords" content="smolcluster, Distributed Training, Deep Learning, PyTorch, Model Parallelism">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>smolcluster - Distributed Deep Learning Library</title>
@@ -139,23 +139,31 @@
             <li><strong>Model Parallelism (MP)</strong> - Layer-wise model distribution perfect for large models and inference serving</li>
           </ul>
 
+          <h3 class="title is-4">� Distributed Inference</h3>
+          <ul>
+            <li><strong>Model Parallelism Inference</strong> - Run large language models that exceed single-device memory by distributing layers across multiple nodes</li>
+            <li><strong>Streaming Token Generation</strong> - Real-time token-by-token generation with activations forwarded sequentially through distributed layers</li>
+            <li><strong>FastAPI Backend</strong> - RESTful API server for easy integration with web and mobile clients (iPad, browsers, etc.)</li>
+            <li><strong>Multi-Device Support</strong> - Serve models across heterogeneous hardware (Mac minis, Raspberry Pis) with automatic activation routing</li>
+            <li><strong>Interactive Chat Interface</strong> - React-based web UI and iOS Swift app for real-time interaction with distributed models</li>
+          </ul>
+
           <h3 class="title is-4">🖥️ Hardware Support</h3>
           <p>
-            Train across heterogeneous hardware including Mac minis, Raspberry Pis, MacBooks, and Windows machines. 
-            The framework intelligently handles different hardware capabilities and network latencies.
+            Train and run inference across heterogeneous hardware including Mac minis, Raspberry Pis, MacBooks, Windows machines, and iPad clients. 
           </p>
 
           <h3 class="title is-4">🤖 Model Support</h3>
           <p>
-            Built-in support for MNIST, GPT-2, and custom neural networks. Includes distributed inference with 
-            model parallelism and streaming token generation for language models.
+            Built-in support for MNIST, GPT-2 (117M parameters), and custom neural networks. Supports both training and distributed inference with 
+            model parallelism. Streaming token generation enables interactive applications with large language models.
           </p>
 
           <h3 class="title is-4">📊 Monitoring & Logging</h3>
           <ul>
             <li><strong>Grafana + Loki</strong> - Centralized log aggregation with real-time queries across all nodes</li>
             <li><strong>Weights & Biases Integration</strong> - Automatic tracking of training metrics, gradient norms, and hardware utilization</li>
-            <li><strong>Web Interface</strong> - React-based chat UI for GPT inference</li>
+            <li><strong>Web Interface</strong> - React-based chat UI for GPT inference with real-time streaming responses</li>
           </ul>
         </div>
       </div>
@@ -172,10 +180,14 @@
       <div class="column is-full-width has-text-centered">
         <h2 class="title is-3">Demo</h2>
         <div class="content">
-          <video controls style="max-width: 100%; height: auto; margin: 20px 0;">
-            <source src="./static/videos/inference_mp.mov" type="video/quicktime">
-            Your browser does not support the video tag.
-          </video>
+          <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px 0;">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="https://www.youtube.com/embed/Jp0ptkampk8" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </div>
           <div class="content has-text-left" style="max-width: 800px; margin: 0 auto;">
             <p><strong>Distributed GPT-2 Inference with Model Parallelism:</strong></p>
             <ul>

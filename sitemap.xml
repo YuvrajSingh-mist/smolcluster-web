@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Main page -->
+  <url>
+    <loc>https://yuvrajsingh-mist.github.io/smolcluster-web/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Image in sitemap for better image SEO -->
+    <image:image>
+      <image:loc>https://yuvrajsingh-mist.github.io/smolcluster-web/static/images/architecture.png</image:loc>
+      <image:title>smolcluster Distributed Deep Learning Architecture</image:title>
+      <image:caption>Architecture diagram showing heterogeneous hardware cluster for distributed PyTorch training</image:caption>
+    </image:image>
+    
+    <!-- Video in sitemap -->
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Jp0ptkampk8/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>smolcluster - Distributed GPT-2 Inference Demo</video:title>
+      <video:description>Demonstration of distributed GPT-2 inference using model parallelism across Mac Mini M4 cluster with real-time streaming token generation</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Jp0ptkampk8</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/Jp0ptkampk8</video:player_loc>
+      <video:duration>600</video:duration>
+      <video:publication_date>2026-02-15T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+    </video:video>
+  </url>
+  
+  <!-- GitHub repository as external reference -->
+  <url>
+    <loc>https://github.com/YuvrajSingh-mist/smolcluster</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+</urlset>

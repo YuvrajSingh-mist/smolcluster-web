@@ -1,0 +1,9 @@
+# robots.txt for smolcluster
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://yuvrajsingh-mist.github.io/smolcluster-web/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

@@ -1,0 +1,22 @@
+{
+  "name": "smolcluster - Distributed Deep Learning Library",
+  "short_name": "smolcluster",
+  "description": "Distributed deep learning library for training neural networks across heterogeneous hardware using PyTorch",
+  "start_url": "/smolcluster-web/",
+  "scope": "/smolcluster-web/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/smolcluster-web/static/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "development", "education"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="smolcluster - A distributed deep learning library for training and inferencing neural networks across heterogeneous hardware using PyTorch.">
-  <meta name="keywords" content="smolcluster, Distributed Training, Deep Learning, PyTorch, Model Parallelism">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>smolcluster - Distributed Deep Learning Library</title>
+  
+  <!-- Primary Meta Tags -->
+  <title>smolcluster - Distributed Deep Learning Library for Heterogeneous Hardware | PyTorch Training</title>
+  <meta name="title" content="smolcluster - Distributed Deep Learning Library for Heterogeneous Hardware | PyTorch Training">
+  <meta name="description" content="smolcluster: Open-source distributed deep learning library for training neural networks across heterogeneous hardware (Mac minis, Raspberry Pi, GPUs). Features EDP, SyncPS, Model Parallelism, GPT-2 inference, and socket-based PyTorch communication. Perfect for distributed AI training.">
+  <meta name="keywords" content="smolcluster, distributed deep learning, distributed training, PyTorch distributed, heterogeneous hardware, model parallelism, data parallelism, EDP, elastic distributed parallelism, parameter server, distributed inference, GPT-2 distributed, Mac mini cluster, Raspberry Pi cluster, distributed AI, neural network training, PyTorch cluster, socket-based communication, distributed PyTorch, heterogeneous cluster training, distributed machine learning, multi-device training, distributed neural networks, PyTorch multi-node, cluster computing, distributed GPT, model parallel inference, async training, sync training">
+  <meta name="author" content="Yuvraj Singh">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <meta name="theme-color" content="#000000">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yuvrajsingh-mist.github.io/smolcluster-web/">
+  
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="/smolcluster-web/sitemap.xml">
+  
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="/smolcluster-web/manifest.json">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yuvrajsingh-mist.github.io/smolcluster-web/">
+  <meta property="og:title" content="smolcluster - Distributed Deep Learning Library for Heterogeneous Hardware">
+  <meta property="og:description" content="Open-source distributed deep learning library for training neural networks across heterogeneous hardware. Features EDP, SyncPS, Model Parallelism, and GPT-2 inference with PyTorch.">
+  <meta property="og:image" content="https://yuvrajsingh-mist.github.io/smolcluster-web/static/images/architecture.png">
+  <meta property="og:site_name" content="smolcluster">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yuvrajsingh-mist.github.io/smolcluster-web/">
+  <meta property="twitter:title" content="smolcluster - Distributed Deep Learning Library for Heterogeneous Hardware">
+  <meta property="twitter:description" content="Open-source distributed deep learning library for training neural networks across heterogeneous hardware. Features EDP, SyncPS, Model Parallelism, and GPT-2 inference with PyTorch.">
+  <meta property="twitter:image" content="https://yuvrajsingh-mist.github.io/smolcluster-web/static/images/architecture.png">
 
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
@@ -18,7 +52,56 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+  <link rel="alternate icon" href="./static/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/images/apple-touch-icon.png">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "smolcluster",
+    "applicationCategory": "DeveloperApplication",
+    "applicationSubCategory": "Machine Learning Framework",
+    "description": "Distributed deep learning library for training neural networks across heterogeneous hardware using PyTorch. Supports EDP, SyncPS, Model Parallelism, and distributed GPT-2 inference.",
+    "operatingSystem": ["macOS", "Linux", "Windows"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Yuvraj Singh",
+      "url": "https://github.com/YuvrajSingh-mist"
+    },
+    "url": "https://yuvrajsingh-mist.github.io/smolcluster-web/",
+    "downloadUrl": "https://github.com/YuvrajSingh-mist/smolcluster",
+    "screenshot": "https://yuvrajsingh-mist.github.io/smolcluster-web/static/images/architecture.png",
+    "softwareVersion": "1.0",
+    "programmingLanguage": "Python",
+    "license": "https://opensource.org/licenses/MIT",
+    "keywords": "distributed deep learning, PyTorch, heterogeneous hardware, model parallelism, distributed training, neural networks, machine learning, cluster computing",
+    "featureList": [
+      "Elastic Distributed Parallelism (EDP)",
+      "Synchronous Parameter Server (SyncPS)",
+      "Model Parallelism",
+      "Distributed Inference",
+      "Heterogeneous Hardware Support",
+      "Socket-based Communication",
+      "Grafana + Loki Logging",
+      "Weights & Biases Integration",
+      "GPT-2 Distributed Inference"
+    ],
+    "codeRepository": "https://github.com/YuvrajSingh-mist/smolcluster",
+    "sameAs": [
+      "https://github.com/YuvrajSingh-mist/smolcluster"
+    ]
+  }
+  </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -53,20 +136,22 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">smolcluster</h1>
-          <h2 class="subtitle is-3">Distributed Deep Learning Library</h2>
+          <h1 class="title is-1 publication-title" itemprop="name">smolcluster</h1>
+          <h2 class="subtitle is-3">Distributed Deep Learning Library for Heterogeneous Hardware</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Training neural networks across heterogeneous hardware with PyTorch
+              Training and inference for neural networks across Mac minis, Raspberry Pi, and GPUs with PyTorch
             </span>
           </div>
 
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- GitHub Link. -->
+            <div class="publication-links">\n              <!-- GitHub Link. -->
               <span class="link-block">
                 <a href="https://github.com/YuvrajSingh-mist/smolcluster"
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-normal is-rounded is-dark"
+                   aria-label="View smolcluster on GitHub"
+                   target="_blank"
+                   rel="noopener noreferrer">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
@@ -76,7 +161,10 @@
               <!-- Documentation Link. -->
               <span class="link-block">
                 <a href="https://github.com/YuvrajSingh-mist/smolcluster#documentation"
-                   class="external-link button is-normal is-rounded is-dark">
+                   class="external-link button is-normal is-rounded is-dark"
+                   aria-label="Read smolcluster documentation"
+                   target="_blank"
+                   rel="noopener noreferrer">
                   <span class="icon">
                       <i class="fas fa-book"></i>
                   </span>
@@ -116,7 +204,11 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Cluster Architecture</h2>
-        <img src="./static/images/architecture.png" alt="Smolcluster Architecture Diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
+        <img src="./static/images/architecture.png" 
+             alt="smolcluster distributed deep learning architecture diagram showing heterogeneous hardware cluster with Mac minis, Raspberry Pi, and parameter server topology for PyTorch model parallelism and data parallelism" 
+             title="smolcluster Distributed Training Architecture"
+             loading="lazy"
+             style="max-width: 100%; height: auto; margin: 20px 0;">
       </div>
     </div>
     <!--/ Architecture Image. -->
@@ -354,7 +446,12 @@ uv sync</code></pre>
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link" href="https://github.com/YuvrajSingh-mist/smolcluster" class="external-link">
+      <a class="icon-link" 
+         href="https://github.com/YuvrajSingh-mist/smolcluster" 
+         class="external-link"
+         aria-label="Visit smolcluster GitHub repository"
+         target="_blank"
+         rel="noopener noreferrer">
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -362,7 +459,10 @@ uv sync</code></pre>
       <div class="column is-8">
         <div class="content has-text-centered">
           <p>
-            Smolcluster - Distributed Deep Learning Library
+            <strong>smolcluster</strong> - Distributed Deep Learning Library for Heterogeneous Hardware
+          </p>
+          <p>
+            <small>Open-source PyTorch-based framework for distributed training and inference | MIT License</small>
           </p>
         </div>
       </div>

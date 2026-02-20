@@ -7,8 +7,8 @@
   <!-- Primary Meta Tags -->
   <title>smolcluster - Distributed Deep Learning Library for Heterogeneous Hardware | PyTorch Training</title>
   <meta name="title" content="smolcluster - Distributed Deep Learning Library for Heterogeneous Hardware | PyTorch Training">
-  <meta name="description" content="smolcluster: Open-source distributed deep learning library for training neural networks across heterogeneous hardware (Mac minis, Raspberry Pi, GPUs). Features EDP, SyncPS, Model Parallelism, GPT-2 inference, and socket-based PyTorch communication. Perfect for distributed AI training.">
-  <meta name="keywords" content="smolcluster, distributed deep learning, distributed training, PyTorch distributed, heterogeneous hardware, model parallelism, data parallelism, EDP, elastic distributed parallelism, parameter server, distributed inference, GPT-2 distributed, Mac mini cluster, Raspberry Pi cluster, distributed AI, neural network training, PyTorch cluster, socket-based communication, distributed PyTorch, heterogeneous cluster training, distributed machine learning, multi-device training, distributed neural networks, PyTorch multi-node, cluster computing, distributed GPT, model parallel inference, async training, sync training">
+  <meta name="description" content="smolcluster: Open-source distributed deep learning library for training neural networks across heterogeneous hardware (Mac minis, Raspberry Pi, GPUs). Features FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, GPT-2 inference, and socket-based PyTorch communication. Perfect for distributed AI training.">
+  <meta name="keywords" content="smolcluster, distributed deep learning, distributed training, PyTorch distributed, heterogeneous hardware, model parallelism, data parallelism, FSDP, fully sharded data parallelism, ZeRO, classic data parallelism, all-reduce, EDP, elastic distributed parallelism, parameter server, distributed inference, GPT-2 distributed, Mac mini cluster, Raspberry Pi cluster, distributed AI, neural network training, PyTorch cluster, socket-based communication, distributed PyTorch, heterogeneous cluster training, distributed machine learning, multi-device training, distributed neural networks, PyTorch multi-node, cluster computing, distributed GPT, model parallel inference, async training, sync training, bounded staleness, optimizer sharding">
   <meta name="author" content="Yuvraj Singh">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
@@ -28,7 +28,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yuvrajsingh-mist.github.io/smolcluster-web/">
   <meta property="og:title" content="smolcluster - Distributed Deep Learning Library for Heterogeneous Hardware">
-  <meta property="og:description" content="Open-source distributed deep learning library for training neural networks across heterogeneous hardware. Features EDP, SyncPS, Model Parallelism, and GPT-2 inference with PyTorch.">
+  <meta property="og:description" content="Open-source distributed deep learning library for training neural networks across heterogeneous hardware. Features FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, and GPT-2 inference with PyTorch.">
   <meta property="og:image" content="https://yuvrajsingh-mist.github.io/smolcluster-web/static/images/architecture.png">
   <meta property="og:site_name" content="smolcluster">
   
@@ -36,7 +36,7 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://yuvrajsingh-mist.github.io/smolcluster-web/">
   <meta property="twitter:title" content="smolcluster - Distributed Deep Learning Library for Heterogeneous Hardware">
-  <meta property="twitter:description" content="Open-source distributed deep learning library for training neural networks across heterogeneous hardware. Features EDP, SyncPS, Model Parallelism, and GPT-2 inference with PyTorch.">
+  <meta property="twitter:description" content="Open-source distributed deep learning library for training neural networks across heterogeneous hardware. Features FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, and GPT-2 inference with PyTorch.">
   <meta property="twitter:image" content="https://yuvrajsingh-mist.github.io/smolcluster-web/static/images/architecture.png">
 
   <!-- Preconnect for performance -->
@@ -66,7 +66,7 @@
     "name": "smolcluster",
     "applicationCategory": "DeveloperApplication",
     "applicationSubCategory": "Machine Learning Framework",
-    "description": "Distributed deep learning library for training neural networks across heterogeneous hardware using PyTorch. Supports EDP, SyncPS, Model Parallelism, and distributed GPT-2 inference.",
+    "description": "Distributed deep learning library for training neural networks across heterogeneous hardware using PyTorch. Supports FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, and distributed GPT-2 inference.",
     "operatingSystem": ["macOS", "Linux", "Windows"],
     "offers": {
       "@type": "Offer",
@@ -84,14 +84,18 @@
     "softwareVersion": "1.0",
     "programmingLanguage": "Python",
     "license": "https://opensource.org/licenses/MIT",
-    "keywords": "distributed deep learning, PyTorch, heterogeneous hardware, model parallelism, distributed training, neural networks, machine learning, cluster computing",
+    "keywords": "distributed deep learning, PyTorch, heterogeneous hardware, FSDP, ZeRO, classic data parallelism, all-reduce, model parallelism, distributed training, neural networks, machine learning, cluster computing",
     "featureList": [
+      "Fully Sharded Data Parallelism (FSDP) with ZeRO",
+      "Classic Data Parallelism (ClassicDP)",
       "Elastic Distributed Parallelism (EDP)",
       "Synchronous Parameter Server (SyncPS)",
       "Model Parallelism",
       "Distributed Inference",
       "Heterogeneous Hardware Support",
       "Socket-based Communication",
+      "Bounded Staleness Control",
+      "Optimizer State Partitioning",
       "Grafana + Loki Logging",
       "Weights & Biases Integration",
       "GPT-2 Distributed Inference"
@@ -145,7 +149,8 @@
           </div>
 
           <div class="column has-text-centered">
-            <div class="publication-links">\n              <!-- GitHub Link. -->
+            <div class="publication-links">
+              <!-- GitHub Link. -->
               <span class="link-block">
                 <a href="https://github.com/YuvrajSingh-mist/smolcluster"
                    class="external-link button is-normal is-rounded is-dark"
@@ -191,9 +196,9 @@
             to leverage multiple machines with different capabilities for distributed training and inference.
           </p>
           <p>
-            The library supports various distributed training algorithms including Elastic Distributed Parallelism (EDP), 
-            Synchronous Parameter Server (SyncPS), and Model Parallelism. It can run on diverse hardware including Mac minis, 
-            Raspberry Pis, MacBooks, and Windows machines.
+            The library supports various distributed training algorithms including Fully Sharded Data Parallelism (FSDP), 
+            Classic Data Parallelism (ClassicDP), Elastic Distributed Parallelism (EDP), Synchronous Parameter Server (SyncPS), 
+            and Model Parallelism. It can run on diverse hardware including Mac minis, Raspberry Pis, MacBooks, and Windows machines.
           </p>
         </div>
       </div>
@@ -226,6 +231,8 @@
         <div class="content has-text-justified">
           <h3 class="title is-4">🔄 Distributed Training Algorithms</h3>
           <ul>
+            <li><strong>Fully Sharded Data Parallelism (FSDP)</strong> - ZeRO-optimized data parallelism with configurable optimizer state partitioning. Supports Stage 0 (All-Reduce) and Stage 1 (ZeRO optimizer partitioning) for ~1/N memory reduction. Includes bounded staleness for flexible async training</li>
+            <li><strong>Classic Data Parallelism (ClassicDP)</strong> - All-Reduce based data parallelism with bounded staleness control. Workers exchange gradients directly in a fully connected topology with configurable synchronization flexibility</li>
             <li><strong>Elastic Distributed Parallelism (EDP)</strong> - Asynchronous data parallelism with stale gradient tolerance, ideal for heterogeneous clusters</li>
             <li><strong>Synchronous Parameter Server (SyncPS)</strong> - Synchronous data parallelism with barrier coordination for homogeneous clusters</li>
             <li><strong>Model Parallelism (MP)</strong> - Layer-wise model distribution perfect for large models and inference serving</li>

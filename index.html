@@ -307,6 +307,72 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Videos. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Distributed Training Architectures</h2>
+        <div class="content has-text-justified" style="margin-bottom: 30px;">
+          <p class="has-text-centered">Watch different distributed training algorithms and architectures in action.</p>
+        </div>
+        
+        <div class="columns is-multiline is-centered">
+          <!-- Classic Data Parallelism Video -->
+          <div class="column is-half-desktop is-full-tablet">
+            <div class="box" style="height: 100%;">
+              <h3 class="title is-4 has-text-centered">Classic Data Parallelism</h3>
+              <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                        src="https://www.youtube.com/embed/q6s00TA9RxU" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+              </div>
+              <div class="content">
+                <p><strong>All-to-All Architecture:</strong></p>
+                <ul>
+                  <li>Architecture: Direct peer-to-peer gradient exchange</li>
+                  <li>Algorithm: All-Reduce based data parallelism</li>
+                  <li>Communication: Fully connected topology with bounded staleness</li>
+                  <li>Use Case: Workers exchange gradients directly without central parameter server</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Synchronous Parameter Server Video -->
+          <div class="column is-half-desktop is-full-tablet">
+            <div class="box" style="height: 100%;">
+              <h3 class="title is-4 has-text-centered">Synchronous Parameter Server</h3>
+              <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                        src="https://www.youtube.com/embed/z2W9viiKrRQ" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+              </div>
+              <div class="content">
+                <p><strong>Parameter Server Architecture:</strong></p>
+                <ul>
+                  <li>Architecture: Barrier-based synchronous coordination</li>
+                  <li>Algorithm: Data Parallelism with parameter server topology</li>
+                  <li>Synchronization: Workers wait for all gradients before updating</li>
+                  <li>Use Case: Homogeneous clusters with consistent compute capabilities</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Videos. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
     <!-- Getting Started. -->
     <div class="columns is-centered">
       <div class="column is-full-width">

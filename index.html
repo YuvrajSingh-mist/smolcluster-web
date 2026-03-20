@@ -89,7 +89,6 @@
       "Fully Sharded Data Parallelism (FSDP) with ZeRO",
       "Classic Data Parallelism (ClassicDP)",
       "Elastic Distributed Parallelism (EDP)",
-      "Synchronous Parameter Server (SyncPS)",
       "Model Parallelism",
       "Distributed Inference",
       "Heterogeneous Hardware Support",
@@ -144,7 +143,7 @@
           <h2 class="subtitle is-3">Distributed Deep Learning Library for Heterogeneous Hardware</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Training and inference for neural networks across Mac minis, Raspberry Pi, and GPUs with PyTorch
+              Training and inference for neural networks across heterogeneous hardware with PyTorch
             </span>
           </div>
 
@@ -197,8 +196,8 @@
           </p>
           <p>
             The library supports various distributed training algorithms including Fully Sharded Data Parallelism (FSDP), 
-            Classic Data Parallelism (ClassicDP), Elastic Distributed Parallelism (EDP), Synchronous Parameter Server (SyncPS), 
-            and Model Parallelism. It can run on diverse hardware including Mac minis, Raspberry Pis, MacBooks, and Windows machines.
+            Classic Data Parallelism (ClassicDP), Elastic Distributed Parallelism (EDP),
+            Model Parallelism, Model Parallelism with Pipeline, and Expert Parallelism. It can run on diverse hardware including Mac minis, Raspberry Pis, MacBooks, and Windows machines.
           </p>
         </div>
       </div>
@@ -229,17 +228,17 @@
         <h2 class="title is-3">Key Features</h2>
 
         <div class="content has-text-justified">
-          <h3 class="title is-4">🔄 Distributed Training Algorithms</h3>
+          <h3 class="title is-4">Distributed Training Algorithms</h3>
           <ul>
             <li><strong>Fully Sharded Data Parallelism (FSDP)</strong> - ZeRO-optimized data parallelism with configurable optimizer state partitioning. Supports Stage 0 (All-Reduce) and Stage 1 (ZeRO optimizer partitioning) for ~1/N memory reduction. Includes bounded staleness for flexible async training</li>
             <li><strong>Classic Data Parallelism (ClassicDP)</strong> - All-Reduce based data parallelism with bounded staleness control. Workers exchange gradients directly in a fully connected topology with configurable synchronization flexibility</li>
             <li><strong>Elastic Distributed Parallelism (EDP)</strong> - Asynchronous data parallelism with stale gradient tolerance, ideal for heterogeneous clusters</li>
-            <li><strong>Synchronous Parameter Server (SyncPS)</strong> - Synchronous data parallelism with barrier coordination for homogeneous clusters</li>
             <li><strong>Model Parallelism (MP)</strong> - Layer-wise model distribution perfect for large models and inference serving</li>
+            <li><strong>Model Parallelism with Pipeline (MPPipeline)</strong> - Pipeline-based model parallelism with inter-layer communication and overlapped computation for improved throughput and reduced latency during inference</li>
+            <li><strong>Expert Parallelism (EP)</strong> - Sparse mixture-of-experts (MoE) training with distributed expert assignment across nodes. Enables training of large sparse models with efficient expert routing and load balancing</li>
           </ul>
 
-          <h3 class="title is-4">� Distributed Inference</h3>
-          <ul>
+          <h3 class="title is-4">� Distributed Inference</h3>            <li><strong>Pipeline Model Parallelism Inference</strong> - Optimized token streaming with pipeline parallelism for improved throughput and reduced latency during inference serving</li>          <ul>
             <li><strong>Model Parallelism Inference</strong> - Run large language models that exceed single-device memory by distributing layers across multiple nodes</li>
             <li><strong>Streaming Token Generation</strong> - Real-time token-by-token generation with activations forwarded sequentially through distributed layers</li>
             <li><strong>FastAPI Backend</strong> - RESTful API server for easy integration with web and mobile clients (iPad, browsers, etc.)</li>
@@ -247,18 +246,18 @@
             <li><strong>Interactive Chat Interface</strong> - React-based web UI and iOS Swift app for real-time interaction with distributed models</li>
           </ul>
 
-          <h3 class="title is-4">🖥️ Hardware Support</h3>
+          <h3 class="title is-4">Hardware Support</h3>
           <p>
             Train and run inference across heterogeneous hardware including Mac minis, Raspberry Pis, MacBooks, Windows machines, and iPad clients. 
           </p>
 
-          <h3 class="title is-4">🤖 Model Support</h3>
+          <h3 class="title is-4">Model Support</h3>
           <p>
             Built-in support for MNIST, GPT-2 (117M parameters), and custom neural networks. Supports both training and distributed inference with 
             model parallelism. Streaming token generation enables interactive applications with large language models.
           </p>
 
-          <h3 class="title is-4">📊 Monitoring & Logging</h3>
+          <h3 class="title is-4">Monitoring & Logging</h3>
           <ul>
             <li><strong>Grafana + Loki</strong> - Centralized log aggregation with real-time queries across all nodes</li>
             <li><strong>Weights & Biases Integration</strong> - Automatic tracking of training metrics, gradient norms, and hardware utilization</li>
@@ -310,16 +309,12 @@
     <!-- Videos. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">Distributed Training Architectures</h2>
-        <div class="content has-text-justified" style="margin-bottom: 30px;">
-          <p class="has-text-centered">Watch different distributed training algorithms and architectures in action.</p>
-        </div>
+    
         
         <div class="columns is-multiline is-centered">
           <!-- Classic Data Parallelism Video -->
           <div class="column is-half-desktop is-full-tablet">
             <div class="box" style="height: 100%;">
-              <h3 class="title is-4 has-text-centered">Classic Data Parallelism</h3>
               <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px;">
                 <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
                         src="https://www.youtube.com/embed/q6s00TA9RxU" 
@@ -329,17 +324,17 @@
                 </iframe>
               </div>
               <div class="content">
-                <p><strong>All-to-All Architecture:</strong></p>
+                <p><strong>Distributed Data Parallelism POC (All-to-All):</strong></p>
                 <ul>
-                  <li>Architecture: Direct peer-to-peer gradient exchange</li>
-                  <li>Algorithm: All-Reduce based data parallelism</li>
-                  <li>Communication: Fully connected topology with bounded staleness</li>
-                  <li>Use Case: Workers exchange gradients directly without central parameter server</li>
+                  <li>Model: Llama3.2-1B-Instruct</li>
+                  <li>Hardware: 3x Mac Minis M4 2025 16GB RAM over LAN</li>
+                  <li>Algorithm: ClassicDP with all-to-all gradient exchange</li>
+                  <li>Workflow: Each worker computes local gradients → workers exchange gradients peer-to-peer → each node applies synchronized updates</li>
                 </ul>
               </div>
             </div>
           </div>
-
+          
           <!-- Synchronous Parameter Server Video -->
           <div class="column is-half-desktop is-full-tablet">
             <div class="box" style="height: 100%;">
@@ -353,12 +348,13 @@
                 </iframe>
               </div>
               <div class="content">
-                <p><strong>Parameter Server Architecture:</strong></p>
+                <p><strong>Distributed Data Parallelism POC (SyncPS):</strong></p>
                 <ul>
-                  <li>Architecture: Barrier-based synchronous coordination</li>
-                  <li>Algorithm: Data Parallelism with parameter server topology</li>
-                  <li>Synchronization: Workers wait for all gradients before updating</li>
-                  <li>Use Case: Homogeneous clusters with consistent compute capabilities</li>
+                  <li>Model: Llama3.2-1B-Instruct</li>
+                  <li>Hardware: 3x Mac Minis M4 2025 16GB RAM over LAN plus a dedicated parameter server node</li>
+                  <li>Algorithm: SyncPS with barrier-based synchronization</li>
+                  <li>Demo: Synchronous gradient aggregation and global weight broadcast</li>
+                  <li>Workflow: Workers compute gradients on local batches → all gradients are sent to the parameter server → server aggregates and updates weights → updated weights are broadcast back to all workers each step</li>
                 </ul>
               </div>
             </div>
@@ -432,15 +428,15 @@ uv sync</code></pre>
           <ul>
             <li><strong>Socket-based Communication</strong> - Raw TCP sockets for reliable, low-level control over gradient and activation transfers between nodes. No dependency on MPI or specialized networking libraries.</li>
             <li><strong>Pickle Serialization</strong> - PyTorch tensors serialized with pickle for efficient network transmission, with optional gradient quantization for bandwidth reduction.</li>
-            <li><strong>Hybrid Network Support</strong> - Handles complex topologies mixing Thunderbolt fabric (10Gbps+) and Ethernet edge connections (1Gbps), with proper routing and gateway configuration.</li>
             <li><strong>Asynchronous I/O</strong> - Non-blocking socket operations enable workers to compute while waiting for network transfers in EDP mode.</li>
           </ul>
 
           <h3 class="title is-4">Distributed Training Modes</h3>
           <ul>
             <li><strong>Elastic Distributed Parallelism (EDP)</strong> - Workers train independently with stale gradient tolerance. The parameter server accepts gradients from any model version, making it resilient to stragglers and network latency variance. Workers periodically pull the latest weights without synchronization barriers.</li>
-            <li><strong>Synchronous Parameter Server (SyncPS)</strong> - Barrier-based coordination where the server waits for all workers to submit gradients before updating. Uses Polyak averaging and synchronous weight broadcasts for faster convergence on homogeneous clusters.</li>
             <li><strong>Model Parallelism</strong> - Sequential layer distribution across nodes with activation forwarding. Enables training and inference of models exceeding single-device memory. Each worker holds a subset of layers and forwards activations to the next rank.</li>
+            <li><strong>Pipeline Model Parallelism</strong> - Temporal pipeline parallelism with multiple microbatches in-flight across stages. Reduces bubble size and improves GPU/device utilization during training of large models.</li>
+            <li><strong>Expert Parallelism</strong> - Distributed training of mixture-of-experts models with expert placement across nodes. Enables efficient training of sparse models with dynamic expert routing and load balancing across heterogeneous devices.</li>
           </ul>
 
           <h3 class="title is-4">Data Management</h3>

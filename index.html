@@ -320,8 +320,380 @@
   </div>
 </nav>
 
-<!-- ── Hero ── -->
-<div class="hero">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" itemprop="name">smolcluster</h1>
+          <h2 class="subtitle is-3">Distributed Deep Learning Library for Heterogeneous Hardware</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Training and inference for neural networks across heterogeneous hardware with PyTorch
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- GitHub Link. -->
+              <span class="link-block">
+                <a href="https://github.com/YuvrajSingh-mist/smolcluster"
+                   class="external-link button is-normal is-rounded is-dark"
+                   aria-label="View smolcluster on GitHub"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                </a>
+              </span>
+              <!-- Documentation Link. -->
+              <span class="link-block">
+                <a href="https://github.com/YuvrajSingh-mist/smolcluster#documentation"
+                   class="external-link button is-normal is-rounded is-dark"
+                   aria-label="Read smolcluster documentation"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <span class="icon">
+                      <i class="fas fa-book"></i>
+                  </span>
+                  <span>Documentation</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>smolcluster</strong> is a distributed deep learning library designed for training neural networks 
+            across heterogeneous hardware using PyTorch and socket-based communication. It enables researchers and developers 
+            to leverage multiple machines with different capabilities for distributed training and inference.
+          </p>
+          <p>
+            The library supports various distributed training algorithms including Fully Sharded Data Parallelism (FSDP), 
+            Classic Data Parallelism (ClassicDP), Elastic Distributed Parallelism (EDP),
+            Model Parallelism, Model Parallelism with Pipeline, and Expert Parallelism. It can run on diverse hardware including Mac minis, Raspberry Pis, MacBooks, and Windows machines.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Overview. -->
+
+    <!-- Architecture Image. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Cluster Architecture</h2>
+        <img src="./static/images/architecture.png" 
+             alt="smolcluster distributed deep learning architecture diagram showing heterogeneous hardware cluster with Mac minis, Raspberry Pi, and parameter server topology for PyTorch model parallelism and data parallelism" 
+             title="smolcluster Distributed Training Architecture"
+             loading="lazy"
+             style="max-width: 100%; height: auto; margin: 20px 0;">
+      </div>
+    </div>
+    <!--/ Architecture Image. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Features. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Key Features</h2>
+
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Distributed Training Algorithms</h3>
+          <ul>
+            <li><strong>Fully Sharded Data Parallelism (FSDP)</strong> - ZeRO-optimized data parallelism with configurable optimizer state partitioning. Supports Stage 0 (All-Reduce) and Stage 1 (ZeRO optimizer partitioning) for ~1/N memory reduction. Includes bounded staleness for flexible async training</li>
+            <li><strong>Classic Data Parallelism (ClassicDP)</strong> - All-Reduce based data parallelism with bounded staleness control. Workers exchange gradients directly in a fully connected topology with configurable synchronization flexibility</li>
+            <li><strong>Elastic Distributed Parallelism (EDP)</strong> - Asynchronous data parallelism with stale gradient tolerance, ideal for heterogeneous clusters</li>
+            <li><strong>Model Parallelism (MP)</strong> - Layer-wise model distribution perfect for large models and inference serving</li>
+            <li><strong>Model Parallelism with Pipeline (MPPipeline)</strong> - Pipeline-based model parallelism with inter-layer communication and overlapped computation for improved throughput and reduced latency during inference</li>
+            <li><strong>Expert Parallelism (EP)</strong> - Sparse mixture-of-experts (MoE) training with distributed expert assignment across nodes. Enables training of large sparse models with efficient expert routing and load balancing</li>
+          </ul>
+
+          <h3 class="title is-4">Distributed Inference</h3>
+          <ul>
+            <li><strong>Supported Inference Algorithms</strong> - Pipeline Parallelism and Data Parallelism (DP)</li>
+            <li><strong>Streaming Token Generation</strong> - Real-time token-by-token generation with activations forwarded sequentially through distributed layers</li>
+            <li><strong>FastAPI Backend</strong> - RESTful API server for easy integration with web and mobile clients (iPad, browsers, etc.)</li>
+            <li><strong>Multi-Device Support</strong> - Serve models across heterogeneous hardware (Mac minis, Raspberry Pis) with automatic activation routing</li>
+            <li><strong>Interactive Chat Interface</strong> - React-based web UI and iOS Swift app for real-time interaction with distributed models</li>
+          </ul>
+
+          <h3 class="title is-4">Hardware Support</h3>
+          <p>
+            Train and run inference across heterogeneous hardware including Mac minis, Raspberry Pis, MacBooks, Windows machines, and iPad clients. 
+          </p>
+
+          <h3 class="title is-4">Model Support</h3>
+          <p>
+            Built-in support via the <a href="https://github.com/huggingface/transformers" target="_blank" rel="noopener noreferrer">Hugging Face Transformers</a> library for Data Parallelism (DP). For Model Parallelism (MP), GPT-2 (117M) is currently supported, with support for additional models coming soon.
+          </p>
+
+          <h3 class="title is-4">Monitoring & Logging</h3>
+          <ul>
+            <li><strong>Grafana + Loki</strong> - Centralized log aggregation with real-time queries across all nodes</li>
+            <li><strong>Weights & Biases Integration</strong> - Automatic tracking of training metrics, gradient norms, and hardware utilization</li>
+            <li><strong>Web Interface</strong> - React-based chat UI for GPT inference with real-time streaming responses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Features. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Demo Video. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Demo</h2>
+        <div class="content">
+          <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px 0;">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="https://www.youtube.com/embed/Jp0ptkampk8" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+          <div class="content has-text-left" style="max-width: 800px; margin: 0 auto;">
+            <p><strong>Distributed GPT-2 Inference with Model Parallelism:</strong></p>
+            <ul>
+              <li>Model: GPT-2 (117M parameters)</li>
+              <li>Hardware: iPad client + 2× Mac Mini M4 (2025)</li>
+              <li>Algorithm: Model Parallelism with layer distribution</li>
+              <li>Demo: Real-time streaming token generation across distributed layers</li>
+              <li>Workflow: User prompts from iPad → activations forwarded between Mac Minis → tokens streamed back</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Demo Video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Videos. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+    
+        
+        <div class="columns is-multiline is-centered">
+          <!-- Classic Data Parallelism Video -->
+          <div class="column is-half-desktop is-full-tablet">
+            <div class="box" style="height: 100%;">
+              <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                        src="https://www.youtube.com/embed/q6s00TA9RxU" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+              </div>
+              <div class="content">
+                <p><strong>Distributed Data Parallelism POC (All-to-All):</strong></p>
+                <ul>
+                  <li>Model: Llama3.2-1B-Instruct</li>
+                  <li>Hardware: 3x Mac Minis M4 2025 16GB RAM over LAN</li>
+                  <li>Algorithm: ClassicDP with all-to-all gradient exchange</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Synchronous Parameter Server Video -->
+          <div class="column is-half-desktop is-full-tablet">
+            <div class="box" style="height: 100%;">
+              <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                        src="https://www.youtube.com/embed/z2W9viiKrRQ" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+              </div>
+              <div class="content">
+                <p><strong>Distributed Data Parallelism POC (SyncPS):</strong></p>
+                <ul>
+                  <li>Model: Llama3.2-1B-Instruct</li>
+                  <li>Hardware: 3x Mac Minis M4 2025 16GB RAM over LAN plus a dedicated parameter server node</li>
+                  <li>Algorithm: SyncPS with barrier-based synchronization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Videos. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Getting Started. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Getting Started</h2>
+
+        <div class="content">
+          <p><strong>Note:</strong> Smolcluster requires a distributed hardware setup and network configuration before you can begin training. This is not a straightforward installation.</p>
+          
+          <h4>Prerequisites</h4>
+          <p>Before using Smolcluster, you need to set up your distributed cluster:</p>
+          <ul>
+            <li><strong>Hardware Setup:</strong> Configure your machines (Mac minis, Raspberry Pis, GPUs, etc.)</li>
+            <li><strong>Network Configuration:</strong>
+              <ul>
+                <li>Mac minis: Thunderbolt connections and network bridges</li>
+                <li>Raspberry Pi/GPUs: Ethernet connections</li>
+                <li>SSH setup with proper gateways and key authentication</li>
+              </ul>
+            </li>
+            <li><strong>Cluster Configuration:</strong> YAML configuration files for your specific topology</li>
+          </ul>
+
+          <h4>Installation</h4>
+           <p><strong>Important:</strong> Please refer to the <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/setup_cluster.md">Cluster Setup Guide</a> for detailed hardware setup, networking configuration, and troubleshooting before attempting to run training scripts.</p>
+          <pre><code>
+# Clone and install
+git clone https://github.com/YuvrajSingh-mist/smolcluster.git
+cd smolcluster
+uv sync</code></pre>
+
+         
+        </div>
+      </div>
+    </div>
+    <!--/ Quick Start. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Technical Details. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Technical Details</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Smolcluster implements a distributed training system designed from the ground up for heterogeneous hardware. 
+            The library supports multiple distributed training paradigms, each optimized for different cluster configurations 
+            and network topologies.
+          </p>
+
+          <h3 class="title is-4">Communication Infrastructure</h3>
+          <ul>
+            <li><strong>Socket-based Communication</strong> - Raw TCP sockets for reliable, low-level control over gradient and activation transfers between nodes. No dependency on MPI or specialized networking libraries.</li>
+            <li><strong>Pickle Serialization</strong> - PyTorch tensors serialized with pickle for efficient network transmission, with optional gradient quantization for bandwidth reduction.</li>
+            <li><strong>Asynchronous I/O</strong> - Non-blocking socket operations enable workers to compute while waiting for network transfers in EDP mode.</li>
+          </ul>
+
+          <h3 class="title is-4">Distributed Training Modes</h3>
+          <ul>
+            <li><strong>Elastic Distributed Parallelism (EDP)</strong> - Workers train independently with stale gradient tolerance. The parameter server accepts gradients from any model version, making it resilient to stragglers and network latency variance. Workers periodically pull the latest weights without synchronization barriers.</li>
+            <li><strong>Model Parallelism</strong> - Sequential layer distribution across nodes with activation forwarding. Enables training and inference of models exceeding single-device memory. Each worker holds a subset of layers and forwards activations to the next rank.</li>
+            <li><strong>Pipeline Model Parallelism</strong> - Temporal pipeline parallelism with multiple microbatches in-flight across stages. Reduces bubble size and improves GPU/device utilization during training of large models.</li>
+            <li><strong>Expert Parallelism</strong> - Distributed training of mixture-of-experts models with expert placement across nodes. Enables efficient training of sparse models with dynamic expert routing and load balancing across heterogeneous devices.</li>
+          </ul>
+
+          <h3 class="title is-4">Data Management</h3>
+          <ul>
+            <li><strong>Automatic Data Partitioning</strong> - Dataset automatically sharded across workers based on global rank and world size, ensuring no data overlap.</li>
+            <li><strong>Deterministic Shuffling</strong> - Seeded random number generators ensure reproducible data ordering across runs.</li>
+            <li><strong>Streaming Support</strong> - Memory-efficient data loading for large datasets with PyTorch DataLoader integration.</li>
+          </ul>
+
+          <h3 class="title is-4">Fault Tolerance & Monitoring</h3>
+          <ul>
+            <li><strong>Checkpointing</strong> - Periodic model snapshots with configurable intervals. Supports resuming training from the latest checkpoint after failures.</li>
+            <li><strong>Distributed Logging</strong> - Grafana + Loki stack aggregates logs from all nodes in real-time. Promtail agents on each machine forward structured logs to a central Loki instance.</li>
+            <li><strong>Weights & Biases Integration</strong> - Automatic logging of training metrics, gradient norms, per-layer statistics, and system metrics (GPU utilization, memory usage, network throughput).</li>
+            <li><strong>Timeout Handling</strong> - Configurable timeouts prevent deadlocks when workers fail or network partitions occur.</li>
+          </ul>
+
+          <h3 class="title is-4">Performance Optimizations</h3>
+          <ul>
+            <li><strong>Gradient Quantization</strong> - Optional 8-bit quantization reduces gradient transfer size by 4x with minimal accuracy impact.</li>
+            <li><strong>CPU-based Computation</strong> - Designed to utilize CPU cores on commodity hardware (Mac minis, Raspberry Pis) rather than requiring GPUs.</li>
+            <li><strong>Mixed Precision Training</strong> - FP16 automatic mixed precision support for compatible hardware to accelerate training.</li>
+            <li><strong>Gradient Accumulation</strong> - Simulates larger batch sizes by accumulating gradients over multiple micro-batches before updating.</li>
+          </ul>
+
+          <p><strong>See the architecture diagram above for a visual representation of the cluster topology.</strong></p>
+        </div>
+      </div>
+    </div>
+    <!--/ Technical Details. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Documentation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Documentation</h2>
+
+        <div class="content">
+          <p>Comprehensive guides to help you get the most out of Smolcluster:</p>
+          <ul>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/configuration.md">Configuration Guide</a> - Cluster and model configuration</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/training.md">Training Guide</a> - Training algorithms and usage</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/logging.md">Logging Setup</a> - Grafana + Loki distributed logging</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/setup_cluster.md">Cluster Setup</a> - Hardware setup and networking</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/inference.md">Inference Guide</a> - Model parallelism inference</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Documentation. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- License. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">License</h2>
+        <div class="content">
+          <p>Smolcluster is released under the MIT License.</p>
+          <p>Contributions are welcome! Visit the <a href="https://github.com/YuvrajSingh-mist/smolcluster">GitHub repository</a> to get involved.</p>
+        </div>
+      </div>
+    </div>
+    <!--/ License. -->
+  </div>
+</section>
+
+
+<footer class="footer">
   <div class="container">
     <h1>smolcluster</h1>
     <p class="hero-subtitle">Distributed Deep Learning Library for Heterogeneous Hardware</p>

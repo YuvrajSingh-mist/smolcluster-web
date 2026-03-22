@@ -238,8 +238,9 @@
             <li><strong>Expert Parallelism (EP)</strong> - Sparse mixture-of-experts (MoE) training with distributed expert assignment across nodes. Enables training of large sparse models with efficient expert routing and load balancing</li>
           </ul>
 
-          <h3 class="title is-4">� Distributed Inference</h3>            <li><strong>Pipeline Model Parallelism Inference</strong> - Optimized token streaming with pipeline parallelism for improved throughput and reduced latency during inference serving</li>          <ul>
-            <li><strong>Model Parallelism Inference</strong> - Run large language models that exceed single-device memory by distributing layers across multiple nodes</li>
+          <h3 class="title is-4">Distributed Inference</h3>
+          <ul>
+            <li><strong>Supported Inference Algorithms</strong> - Pipeline Parallelism and Data Parallelism (DP)</li>
             <li><strong>Streaming Token Generation</strong> - Real-time token-by-token generation with activations forwarded sequentially through distributed layers</li>
             <li><strong>FastAPI Backend</strong> - RESTful API server for easy integration with web and mobile clients (iPad, browsers, etc.)</li>
             <li><strong>Multi-Device Support</strong> - Serve models across heterogeneous hardware (Mac minis, Raspberry Pis) with automatic activation routing</li>
@@ -253,8 +254,7 @@
 
           <h3 class="title is-4">Model Support</h3>
           <p>
-            Built-in support for MNIST, GPT-2 (117M parameters), and custom neural networks. Supports both training and distributed inference with 
-            model parallelism. Streaming token generation enables interactive applications with large language models.
+            Built-in support via the <a href="https://github.com/huggingface/transformers" target="_blank" rel="noopener noreferrer">Hugging Face Transformers</a> library for Data Parallelism (DP). For Model Parallelism (MP), GPT-2 (117M) is currently supported, with support for additional models coming soon.
           </p>
 
           <h3 class="title is-4">Monitoring & Logging</h3>
@@ -329,7 +329,6 @@
                   <li>Model: Llama3.2-1B-Instruct</li>
                   <li>Hardware: 3x Mac Minis M4 2025 16GB RAM over LAN</li>
                   <li>Algorithm: ClassicDP with all-to-all gradient exchange</li>
-                  <li>Workflow: Each worker computes local gradients → workers exchange gradients peer-to-peer → each node applies synchronized updates</li>
                 </ul>
               </div>
             </div>
@@ -338,7 +337,6 @@
           <!-- Synchronous Parameter Server Video -->
           <div class="column is-half-desktop is-full-tablet">
             <div class="box" style="height: 100%;">
-              <h3 class="title is-4 has-text-centered">Synchronous Parameter Server</h3>
               <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px;">
                 <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
                         src="https://www.youtube.com/embed/z2W9viiKrRQ" 
@@ -353,8 +351,6 @@
                   <li>Model: Llama3.2-1B-Instruct</li>
                   <li>Hardware: 3x Mac Minis M4 2025 16GB RAM over LAN plus a dedicated parameter server node</li>
                   <li>Algorithm: SyncPS with barrier-based synchronization</li>
-                  <li>Demo: Synchronous gradient aggregation and global weight broadcast</li>
-                  <li>Workflow: Workers compute gradients on local batches → all gradients are sent to the parameter server → server aggregates and updates weights → updated weights are broadcast back to all workers each step</li>
                 </ul>
               </div>
             </div>

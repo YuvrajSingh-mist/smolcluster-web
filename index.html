@@ -365,40 +365,19 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Getting Started. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Getting Started</h2>
-
+    <!-- Quick Start. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Quick Start</h2>
         <div class="content">
-          <p><strong>Note:</strong> Smolcluster requires a distributed hardware setup and network configuration before you can begin training. This is not a straightforward installation.</p>
-          
-          <h4>Prerequisites</h4>
-          <p>Before using Smolcluster, you need to set up your distributed cluster:</p>
-          <ul>
-            <li><strong>Hardware Setup:</strong> Configure your machines (Mac minis, Raspberry Pis, GPUs, etc.)</li>
-            <li><strong>Network Configuration:</strong>
-              <ul>
-                <li>Mac minis: Thunderbolt connections and network bridges</li>
-                <li>Raspberry Pi/GPUs: Ethernet connections</li>
-                <li>SSH setup with proper gateways and key authentication</li>
-              </ul>
-            </li>
-            <li><strong>Cluster Configuration:</strong> YAML configuration files for your specific topology</li>
-          </ul>
-
-          <h4>Installation</h4>
-          <p>Once your cluster is properly configured:</p>
-          <pre><code># Install uv package manager
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Clone and install
-git clone https://github.com/YuvrajSingh-mist/smolcluster.git
-cd smolcluster
-uv sync</code></pre>
-
-          <p><strong>Important:</strong> Please refer to the <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/setup_cluster.md">Cluster Setup Guide</a> for detailed hardware setup, networking configuration, and troubleshooting before attempting to run training scripts.</p>
+          <p>Step-by-step setup guide for Mac Mini (Thunderbolt) and Jetson / home router clusters, with commands ready to copy.</p>
         </div>
+        <a href="./quickstart.html"
+           class="external-link button is-normal is-rounded is-dark"
+           style="margin-top: 8px;">
+          <span class="icon"><i class="fas fa-terminal"></i></span>
+          <span>Open Setup Guide</span>
+        </a>
       </div>
     </div>
     <!--/ Quick Start. -->

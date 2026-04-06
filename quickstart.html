@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>smolcluster — Quick Start</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+  <link rel="alternate icon" href="./static/images/favicon.ico">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    :root {
+      --bg-0: #f8fbfc;
+      --bg-1: #eef7f8;
+      --bg-2: #ffffff;
+      --ink: #12343b;
+      --ink-2: #32565d;
+      --ink-3: #648087;
+      --accent: #f39a1f;
+      --teal: #167d90;
+      --green: #1a9e63;
+      --red: #c0392b;
+      --panel: rgba(255,255,255,0.82);
+      --line: rgba(18,52,59,0.09);
+      --line2: rgba(18,52,59,0.05);
+      --r: 14px;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── Top nav ─────────────────────────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 13px 28px;
+      background: var(--panel); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .logo {
+      font-size: 19px; font-weight: 700; letter-spacing: -.5px;
+      color: var(--ink); text-decoration: none;
+    }
+    .logo em { color: var(--ink); font-style: normal; }
+    .logo:hover { opacity: 0.82; }
+    .nav-back {
+      font-size: 12px; font-weight: 600; color: var(--ink-3);
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px;
+      background: rgba(255,255,255,0.7); transition: background .14s, color .14s;
+    }
+    .nav-back:hover { background: rgba(255,255,255,1); color: var(--ink); }
+
+    /* ─── Setup shell ─────────────────────────────────────────────────────── */
+    .setup-shell {
+      flex: 1;
+      padding: 28px 24px 40px;
+      background: #ffffff;
+    }
+    .setup-wrap {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 340px 1fr;
+    }
+    .setup-panel,
+    .setup-main {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 8px 18px rgba(15,41,38,0.08);
+    }
+    .setup-panel {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .setup-main {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 560px;
+    }
+    .setup-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+    .setup-tabs {
+      display: flex;
+      gap: 8px;
+    }
+    .setup-tab {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink-2);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: background .12s, color .12s, border-color .12s;
+    }
+    .setup-tab.active {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+    .setup-progress {
+      height: 6px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--line2);
+    }
+    .setup-progress > div {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--accent));
+      transition: width .25s ease;
+    }
+    .setup-steps {
+      display: grid;
+      gap: 7px;
+    }
+    .setup-step {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 12px;
+      background: #fff;
+      color: var(--ink-2);
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: background .12s, border-color .12s, color .12s;
+    }
+    .setup-step:hover { background: var(--bg-1); }
+    .setup-step.active {
+      border-color: rgba(23,126,137,0.45);
+      background: rgba(23,126,137,0.08);
+      color: var(--ink);
+    }
+    .setup-main h2 {
+      font-size: clamp(20px, 3vw, 29px);
+      letter-spacing: -0.4px;
+      margin-bottom: 4px;
+    }
+    .setup-main p {
+      color: var(--ink-2);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* ─── Command block ───────────────────────────────────────────────────── */
+    .cmd-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(15,41,38,0.08);
+    }
+    .cmd-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(248,249,248,0.92);
+    }
+    .cmd-head-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .cmd-dots { display: flex; gap: 5px; flex-shrink: 0; }
+    .cmd-dots span {
+      width: 8px; height: 8px;
+      border-radius: 50%; display: inline-block;
+    }
+    .cmd-dots span:nth-child(1) { background: #ff5f57; }
+    .cmd-dots span:nth-child(2) { background: #febc2e; }
+    .cmd-dots span:nth-child(3) { background: #28c840; }
+    .cmd-title {
+      color: var(--ink);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .cmd-subtitle {
+      color: var(--ink-3);
+      font-size: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .copy-btn {
+      background: rgba(15,41,38,0.06);
+      border: 1px solid var(--line);
+      color: var(--ink-2);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .12s, color .12s;
+      letter-spacing: .3px;
+    }
+    .copy-btn:hover { background: rgba(15,41,38,0.13); color: var(--ink); }
+    .copy-btn.copied { color: #1a9e63; border-color: rgba(26,158,99,0.5); }
+    .setup-cmd {
+      color: var(--ink-2);
+      padding: 14px 16px 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11.5px;
+      line-height: 1.75;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* ─── Footer buttons ──────────────────────────────────────────────────── */
+    .setup-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .setup-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 9px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--ink-2);
+      font-family: 'Space Grotesk', sans-serif;
+      transition: background .12s, color .12s;
+    }
+    .setup-btn:hover { background: var(--bg-1); }
+    .setup-btn.primary {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+    .setup-btn.primary:hover { background: #0f6575; border-color: #0f6575; }
+
+    /* ─── Responsive ──────────────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .setup-wrap { grid-template-columns: 1fr; }
+      .setup-main { min-height: 460px; }
+      header { padding: 12px 16px; }
+      .setup-shell { padding: 16px 12px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="./index.html">smol<em>cluster</em></a>
+  <a class="nav-back" href="./index.html">← Back to home</a>
+</header>
+
+<div class="setup-shell">
+  <div class="setup-wrap">
+
+    <aside class="setup-panel">
+      <div class="setup-title">Quickstart Tracks</div>
+      <div class="setup-tabs">
+        <button class="setup-tab active" id="setup-tab-mac" onclick="setTrack('mac')">Mac Mini</button>
+        <button class="setup-tab" id="setup-tab-jetson" onclick="setTrack('jetson')">Jetson / Router</button>
+      </div>
+      <div class="setup-progress"><div id="setup-progress-fill"></div></div>
+      <div class="setup-steps" id="setup-steps-list"></div>
+    </aside>
+
+    <section class="setup-main">
+      <div class="setup-title" id="setup-kicker">Step</div>
+      <h2 id="setup-heading">Quickstart</h2>
+      <p id="setup-copy-text"></p>
+      <div class="cmd-wrap">
+        <div class="cmd-head">
+          <div class="cmd-head-left">
+            <div class="cmd-dots"><span></span><span></span><span></span></div>
+            <div>
+              <div class="cmd-title">Command</div>
+              <div class="cmd-subtitle">Copy and run from your controller or worker terminal</div>
+            </div>
+          </div>
+          <button class="copy-btn" id="copy-btn" onclick="copyCmd()">Copy</button>
+        </div>
+        <div class="setup-cmd" id="setup-command"></div>
+      </div>
+      <div class="setup-footer">
+        <div style="display:flex;gap:6px">
+          <button class="setup-btn" onclick="prevStep()">Previous</button>
+          <button class="setup-btn" onclick="nextStep()">Next</button>
+        </div>
+        <a class="setup-btn primary" href="https://github.com/YuvrajSingh-mist/smolcluster" target="_blank" rel="noopener noreferrer">
+          Let's build stuff →
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  const lines = (...parts) => parts.join('\n');
+
+  const setupTracks = {
+    mac: [
+      {
+        title: 'Cable + Static IPs',
+        copy: 'Connect Thunderbolt 4 cables in a chain: mini1↔mini2↔mini3. On each Mac go to System Settings → Network → Thunderbolt Bridge → Details → set Configure IPv4 to Manually.',
+        command: lines(
+          '# Assign static IPs on each Mac:',
+          '# mini1:  10.10.0.1 / 255.255.255.0',
+          '# mini2:  10.10.0.2 / 255.255.255.0',
+          '# mini3:  10.10.0.3 / 255.255.255.0',
+          '',
+          '# Verify connectivity from mini1:',
+          'ifconfig | grep -A5 "bridge\\|thunderbolt"',
+          'ping -c 4 10.10.0.2',
+          'ping -c 4 10.10.0.3'
+        )
+      },
+      {
+        title: 'Node Inventory',
+        copy: 'On mini1, copy the nodes.yaml template and fill in the alias, IP, and username for each worker node.',
+        command: lines(
+          'cp scripts/installations/nodes.yaml.example \\',
+          '  ~/.config/smolcluster/nodes.yaml',
+          '${EDITOR:-nano} ~/.config/smolcluster/nodes.yaml',
+          '',
+          '# nodes.yaml example:',
+          '# nodes:',
+          '#   - alias: mini2',
+          '#     ip: 10.10.0.2',
+          '#     user: your_username',
+          '#   - alias: mini3',
+          '#     ip: 10.10.0.3',
+          '#     user: your_username'
+        )
+      },
+      {
+        title: 'SSH Setup + Bootstrap',
+        copy: 'Distribute SSH keys to all workers, install smolcluster + deps on each node, then copy your .env with W&B and HF tokens.',
+        command: lines(
+          '# Distribute keys and write ~/.ssh/config',
+          'bash scripts/installations/setup_ssh.sh',
+          '',
+          '# Install deps + clone repo on each worker',
+          'bash scripts/installations/setup.sh',
+          '',
+          '# Copy .env to workers',
+          'awk \'/^[[:space:]]*-[[:space:]]*alias:/ {print $3}\' \\',
+          '  ~/.config/smolcluster/nodes.yaml | while read -r node; do',
+          '  scp .env "$node:~/Desktop/smolcluster/"',
+          'done'
+        )
+      },
+      {
+        title: 'Configure Cluster YAMLs',
+        copy: 'Update cluster_config_syncps.yaml and cluster_config_inference.yaml with your actual node aliases, IPs, and port.',
+        command: lines(
+          '# src/smolcluster/configs/cluster_config_syncps.yaml',
+          'host_ip:',
+          '  mini1: "10.10.0.1"',
+          '  mini2: "10.10.0.2"',
+          '  mini3: "10.10.0.3"',
+          'port: 65432',
+          'num_workers: 2',
+          'server: mini1',
+          'workers:',
+          '  - hostname: mini2',
+          '    rank: 1',
+          '  - hostname: mini3',
+          '    rank: 2'
+        )
+      },
+      {
+        title: 'Smoke Test',
+        copy: 'Run a dry run to validate config + SSH, then launch SyncPS inference. Hit the health endpoint to confirm everything is live.',
+        command: lines(
+          '# Dry run (validates config + SSH, no workers launched)',
+          './scripts/inference/launch_inference.sh --algorithm syncps --dry-run',
+          '',
+          '# Launch',
+          './scripts/inference/launch_inference.sh --algorithm syncps',
+          '',
+          '# Health check',
+          'curl http://localhost:8080/health',
+          '',
+          '# Generate',
+          'curl -X POST http://localhost:8080/generate \\',
+          '  -H "Content-Type: application/json" \\',
+          '  -d \'{"prompt": "Once upon a time", "max_new_tokens": 50}\'',
+          '',
+          '# Cleanup',
+          './scripts/inference/launch_inference.sh --cleanup'
+        )
+      }
+    ],
+    jetson: [
+      {
+        title: 'Enable SSH + Static IP',
+        copy: 'On each Jetson, enable SSH and assign a static IP using nmcli. Run the discover script first to find your Ethernet interface name.',
+        command: lines(
+          '# Enable SSH (on each Jetson)',
+          'sudo systemctl enable ssh && sudo systemctl start ssh',
+          '',
+          '# Find interface name',
+          './scripts/installations/discover_network.sh',
+          '',
+          '# Assign static IP (replace CONNECTION_NAME)',
+          'sudo nmcli con mod "<CONNECTION_NAME>" \\',
+          '  ipv4.addresses 192.168.50.101/24 \\',
+          '  ipv4.method manual',
+          'sudo nmcli con up "<CONNECTION_NAME>"',
+          'ip addr show'
+        )
+      },
+      {
+        title: 'Passwordless sudo',
+        copy: 'setup_jetson.sh installs system packages and requires passwordless sudo. Add the NOPASSWD rule on each Jetson before running setup.sh.',
+        command: lines(
+          '# On each Jetson:',
+          'sudo visudo',
+          '',
+          '# Add this line at the end (replace your_username):',
+          '# your_username ALL=(ALL) NOPASSWD:ALL',
+          '',
+          '# Verify - should not prompt for a password:',
+          'sudo whoami'
+        )
+      },
+      {
+        title: 'Node Inventory + SSH',
+        copy: 'On the controller, fill nodes.yaml with Jetson IPs, then run setup_ssh.sh to distribute keys and setup.sh to bootstrap deps on every Jetson.',
+        command: lines(
+          'cp scripts/installations/nodes.yaml.example \\',
+          '  ~/.config/smolcluster/nodes.yaml',
+          '',
+          '# nodes:',
+          '#   - alias: jetson1',
+          '#     ip: 192.168.50.101',
+          '#     user: nvidia',
+          '#   - alias: jetson2',
+          '#     ip: 192.168.50.102',
+          '#     user: nvidia',
+          '',
+          'bash scripts/installations/setup_ssh.sh',
+          'bash scripts/installations/setup.sh'
+        )
+      },
+      {
+        title: 'Configure Cluster YAMLs',
+        copy: 'Update cluster_config_syncps.yaml and cluster_config_inference.yaml with your Jetson IPs and the controller IP on the same subnet.',
+        command: lines(
+          '# src/smolcluster/configs/cluster_config_syncps.yaml',
+          'host_ip:',
+          '  mini1:   "192.168.50.100"',
+          '  jetson1: "192.168.50.101"',
+          '  jetson2: "192.168.50.102"',
+          'port: 65432',
+          'num_workers: 2',
+          'server: mini1',
+          'workers:',
+          '  - hostname: jetson1',
+          '    rank: 1',
+          '  - hostname: jetson2',
+          '    rank: 2'
+        )
+      },
+      {
+        title: 'Smoke Test',
+        copy: 'Dry run first to validate config + SSH, then launch SyncPS inference across your Jetsons. Check the health endpoint.',
+        command: lines(
+          '# Dry run',
+          './scripts/inference/launch_inference.sh --algorithm syncps --dry-run',
+          '',
+          '# Launch',
+          './scripts/inference/launch_inference.sh --algorithm syncps',
+          '',
+          '# Health check',
+          'curl http://localhost:8080/health',
+          '',
+          '# Generate',
+          'curl -X POST http://localhost:8080/generate \\',
+          '  -H "Content-Type: application/json" \\',
+          '  -d \'{"prompt": "Once upon a time", "max_new_tokens": 50}\'',
+          '',
+          '# Cleanup',
+          './scripts/inference/launch_inference.sh --cleanup'
+        )
+      }
+    ]
+  };
+
+  let activeTrack = 'mac';
+  let activeStep = 0;
+
+  function setTrack(track) {
+    activeTrack = track;
+    activeStep = 0;
+    document.getElementById('setup-tab-mac').classList.toggle('active', track === 'mac');
+    document.getElementById('setup-tab-jetson').classList.toggle('active', track === 'jetson');
+    render();
+  }
+
+  function prevStep() {
+    const steps = setupTracks[activeTrack];
+    if (activeStep > 0) { activeStep--; render(); }
+  }
+
+  function nextStep() {
+    const steps = setupTracks[activeTrack];
+    if (activeStep < steps.length - 1) { activeStep++; render(); }
+  }
+
+  function goToStep(i) {
+    activeStep = i;
+    render();
+  }
+
+  function render() {
+    const steps = setupTracks[activeTrack];
+    const s = steps[activeStep];
+    const trackLabel = activeTrack === 'mac' ? 'Mac Mini (Thunderbolt)' : 'Jetson / Home Router';
+
+    document.getElementById('setup-kicker').textContent = `${trackLabel} • Step ${activeStep + 1}/${steps.length}`;
+    document.getElementById('setup-heading').textContent = s.title;
+    document.getElementById('setup-copy-text').textContent = s.copy;
+    document.getElementById('setup-command').textContent = s.command;
+
+    const pct = Math.round(((activeStep + 1) / steps.length) * 100);
+    document.getElementById('setup-progress-fill').style.width = pct + '%';
+
+    const list = document.getElementById('setup-steps-list');
+    list.innerHTML = steps.map((step, i) =>
+      `<div class="setup-step${i === activeStep ? ' active' : ''}" onclick="goToStep(${i})">${step.title}</div>`
+    ).join('');
+
+    const btn = document.getElementById('copy-btn');
+    btn.textContent = 'Copy';
+    btn.classList.remove('copied');
+  }
+
+  function copyCmd() {
+    const text = document.getElementById('setup-command').textContent;
+    const btn = document.getElementById('copy-btn');
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
+    });
+  }
+
+  render();
+</script>
+</body>
+</html>

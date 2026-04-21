@@ -95,7 +95,6 @@
       "Socket-based Communication",
       "Bounded Staleness Control",
       "Optimizer State Partitioning",
-      "Grafana + Loki Logging",
       "Weights & Biases Integration",
       "GPT-2 Distributed Inference"
     ],
@@ -280,7 +279,6 @@
 
           <h3 class="title is-4">Monitoring & Logging</h3>
           <ul>
-            <li><strong>Grafana + Loki</strong> - Centralized log aggregation with real-time queries across all nodes</li>
             <li><strong>Weights & Biases Integration</strong> - Automatic tracking of training metrics, gradient norms, and hardware utilization</li>
             <li><strong>Web Interface</strong> - React-based chat UI for GPT inference with real-time streaming responses</li>
           </ul>
@@ -425,7 +423,6 @@
           <h3 class="title is-4">Fault Tolerance & Monitoring</h3>
           <ul>
             <li><strong>Checkpointing</strong> - Periodic model snapshots with configurable intervals. Supports resuming training from the latest checkpoint after failures.</li>
-            <li><strong>Distributed Logging</strong> - Grafana + Loki stack aggregates logs from all nodes in real-time. Promtail agents on each machine forward structured logs to a central Loki instance.</li>
             <li><strong>Weights & Biases Integration</strong> - Automatic logging of training metrics, gradient norms, per-layer statistics, and system metrics (GPU utilization, memory usage, network throughput).</li>
             <li><strong>Timeout Handling</strong> - Configurable timeouts prevent deadlocks when workers fail or network partitions occur.</li>
           </ul>
@@ -459,7 +456,7 @@
           <ul>
             <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/configuration.md">Configuration Guide</a> - Cluster and model configuration</li>
             <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/training.md">Training Guide</a> - Training algorithms and usage</li>
-            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/logging.md">Logging Setup</a> - Grafana + Loki distributed logging</li>
+            <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/logging.md">Logging Setup</a> - Distributed log monitoring via the dashboard</li>
             <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/setup_cluster.md">Cluster Setup</a> - Hardware setup and networking</li>
             <li><a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/inference.md">Inference Guide</a> - Model parallelism inference</li>
           </ul>

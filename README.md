@@ -9,7 +9,7 @@ Smolcluster is a distributed deep learning library for training neural networks 
 - **Distributed Training Algorithms**: EDP, SyncPS, and Model Parallelism
 - **Heterogeneous Hardware Support**: Mac minis, Raspberry Pis, MacBooks, Windows machines
 - **Model Support**: MNIST, GPT-2, and custom neural networks
-- **Monitoring**: Grafana + Loki logging, W&B integration
+- **Monitoring**: W&B integration
 
 ## Links
 

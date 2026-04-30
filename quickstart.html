@@ -414,6 +414,24 @@
           '# Cleanup',
           './scripts/inference/launch_inference.sh --cleanup'
         )
+      },
+      {
+        title: 'Launch Dashboard',
+        copy: 'Install the dashboard extras (aiofiles for static file serving), then start the visual dashboard on port 9090. It auto-discovers your cluster nodes and streams live training and inference metrics.',
+        command: lines(
+          '# Install dashboard extras (run once on controller)',
+          'uv pip install -e ".[dashboard]"',
+          '',
+          '# Start the dashboard (default port 9090)',
+          'python -m dashboard',
+          '',
+          '# Or on a custom port:',
+          '# python -m dashboard --port 8765',
+          '',
+          '# Open in your browser:',
+          '# http://localhost:9090',
+          '# http://mini1.local:9090  ← from another machine on the network'
+        )
       }
     ],
     jetson: [
@@ -507,6 +525,24 @@
           '',
           '# Cleanup',
           './scripts/inference/launch_inference.sh --cleanup'
+        )
+      },
+      {
+        title: 'Launch Dashboard',
+        copy: 'Install the dashboard extras (aiofiles for static file serving), then start the visual dashboard on port 9090. It auto-discovers your cluster nodes and streams live training and inference metrics.',
+        command: lines(
+          '# Install dashboard extras (run once on controller)',
+          'uv pip install -e ".[dashboard]"',
+          '',
+          '# Start the dashboard (default port 9090)',
+          'python -m dashboard',
+          '',
+          '# Or on a custom port:',
+          '# python -m dashboard --port 8765',
+          '',
+          '# Open in your browser:',
+          '# http://localhost:9090',
+          '# http://<controller-hostname>.local:9090  ← from the network'
         )
       }
     ]

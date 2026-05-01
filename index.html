@@ -260,6 +260,7 @@
 
           <h3 class="title is-4">Distributed Inference</h3>
           <ul>
+            <li>&#9733; <strong>Zero-Config Node Discovery via grove</strong> - <a href="https://github.com/swarnim-j/grove" target="_blank" rel="noopener noreferrer">grove</a> (built by <a href="https://github.com/swarnim-j" target="_blank" rel="noopener noreferrer">Swarnim Jain</a>, integrated into smolcluster) handles automatic node discovery over mDNS on Mac and TCP + Zeroconf on Linux/Jetson — no SSH, no static IPs needed. Includes a live per-rank TUI dashboard. Launch a cluster with <code>grove start &lt;script&gt; -n N</code> on the coordinator and <code>grove join</code> on each worker.</li>
             <li><strong>Supported Inference Algorithms</strong> - Pipeline Parallelism and Data Parallelism (DP)</li>
             <li><strong>Streaming Token Generation</strong> - Real-time token-by-token generation with activations forwarded sequentially through distributed layers</li>
             <li><strong>FastAPI Backend</strong> - RESTful API server for easy integration with web and mobile clients (iPad, browsers, etc.)</li>

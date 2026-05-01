@@ -524,7 +524,7 @@
 
           '',
           '# ── Coordinator (mini1) ─────────────────',
-          'cd ../ && grove start train.py -n 3',
+          'cd ../src/smolcluster && grove start train.py -n 3',
           '# or for a custom script:',
           'grove start train.py -n 3',
           '',
@@ -534,7 +534,7 @@
           '# Workers auto-discover via AirDrop/WiFi — no IPs required.',
           '',
           '# ── Force TCP transport (same LAN) ──────',
-          'GROVE_TRANSPORT=tcp cd ../ && grove start train.py -n 3  # coordinator',
+          'GROVE_TRANSPORT=tcp cd ../src/smolcluster && grove start train.py -n 3  # coordinator',
           'GROVE_TRANSPORT=tcp grove join                 # each worker'
         )
       }
@@ -692,7 +692,7 @@
           'cd ../grove && uv pip install -e .',
           '',
           '# ── Coordinator (controller node) ───────',
-          'GROVE_TRANSPORT=tcp cd ../ && grove start train.py -n 3',
+          'GROVE_TRANSPORT=tcp cd ../src/smolcluster && grove start train.py -n 3',
           '',
           '# ── Workers (each Jetson) ───────────────',
           '# Open a terminal on each Jetson and run:',

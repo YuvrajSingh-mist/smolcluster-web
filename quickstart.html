@@ -259,6 +259,51 @@
     }
     .setup-btn.primary:hover { background: #0f6575; border-color: #0f6575; }
 
+    /* ─── grove TUI highlight ─────────────────────────────────────────────── */
+    .setup-step.grove-step {
+      border-color: rgba(22,125,144,0.5);
+      background: linear-gradient(135deg, rgba(22,125,144,0.07) 0%, rgba(243,154,31,0.06) 100%);
+      color: var(--ink);
+      font-weight: 700;
+      position: relative;
+      box-shadow: 0 0 8px rgba(22,125,144,0.18);
+    }
+    .setup-step.grove-step::after {
+      content: '★';
+      position: absolute;
+      right: 9px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px;
+      color: var(--teal);
+      opacity: 0.8;
+    }
+    .setup-step.grove-step.active {
+      border-color: var(--teal);
+      background: linear-gradient(135deg, rgba(22,125,144,0.13) 0%, rgba(243,154,31,0.09) 100%);
+    }
+    .setup-main.grove-active {
+      border-color: rgba(22,125,144,0.5);
+      box-shadow: 0 0 0 3px rgba(22,125,144,0.08), 0 8px 28px rgba(22,125,144,0.14);
+    }
+    .setup-main.grove-active #setup-kicker {
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .setup-main.grove-active h2 {
+      color: var(--ink);
+    }
+    .setup-main.grove-active .cmd-wrap {
+      border-color: rgba(22,125,144,0.35);
+      box-shadow: 0 4px 18px rgba(22,125,144,0.1);
+    }
+    .setup-main.grove-active .cmd-head {
+      background: linear-gradient(90deg, rgba(22,125,144,0.08) 0%, rgba(243,154,31,0.06) 100%);
+      border-bottom-color: rgba(22,125,144,0.2);
+    }
+
+
+
     /* ─── Responsive ──────────────────────────────────────────────────────── */
     @media (max-width: 860px) {
       .setup-wrap { grid-template-columns: 1fr; }
@@ -375,6 +420,35 @@
         )
       },
       {
+        title: '.env & API Keys',
+        copy: 'Create a .env file at the repo root with your Weights & Biases and Hugging Face credentials. This file is distributed to every worker node in the step above, and is never committed to git.',
+        command: lines(
+          '# Create .env at repo root (mini1):',
+          'cat > .env << \'EOF\'',
+          'WANDB_API_KEY=your_wandb_api_key_here',
+          'HF_TOKEN=your_huggingface_token_here',
+          'EOF',
+          '',
+          '# Get your keys:',
+          '# wandb.ai/authorize          → WANDB_API_KEY',
+          '# huggingface.co/settings/tokens → HF_TOKEN',
+          '',
+          '# Make sure it is gitignored:',
+          'grep -qxF ".env" .gitignore || echo ".env" >> .gitignore',
+          '',
+          '# Push .env to every worker defined in nodes.yaml',
+          '# (uses the same SSH config written by setup_ssh.sh):',
+          'awk \'/^[[:space:]]*-[[:space:]]*alias:/ {print $3}\' \\',
+          '  ~/.config/smolcluster/nodes.yaml | while read -r node; do',
+          '  echo "→ copying .env to $node"',
+          '  scp .env "$node:~/Desktop/smolcluster/.env"',
+          'done',
+          '',
+          '# Verify all placeholders are filled:',
+          'grep "your_" .env && echo "⚠ fill in real values" || echo "✓ looks good"'
+        )
+      },
+      {
         title: 'Configure Cluster YAMLs',
         copy: 'Update cluster_config_syncps.yaml and cluster_config_inference.yaml with your actual node aliases, IPs, and port.',
         command: lines(
@@ -432,6 +506,40 @@
           '# http://localhost:9090',
           '# http://mini1.local:9090  ← from another machine on the network'
         )
+      },
+      {
+        title: 'grove TUI',
+        copy: 'grove gives you an easier setup to run distributed training with live terminal dashboards. Install grove on each Jetson, then start on the coordinator — workers auto-discover via mDNS on the shared subnet, no IPs needed.',
+        command: lines(
+          '# ── If you skipped earlier steps, start here: ───────────',
+          '# Clone the repo and set up the environment on each node:',
+          'git clone https://github.com/YuvrajSingh-mist/smolcluster.git',
+          'cd smolcluster',
+          'uv sync          # creates .venv and installs all deps',
+          '# ────────────────────────────────────────────────────────',
+          '',
+          '# Install grove on each Mac (run once, from smolcluster repo root):',
+          'source .venv/bin/activate',
+          'uv pip install -e grove/',
+
+          '',
+          '# ── Coordinator (mini1) ─────────────────',
+          'grove start scripts/training/launch_dp_train_gpt.sh -n 3',
+          '# or for a custom script:',
+          'grove start train.py -n 3',
+          '',
+          '# ── Workers (mini2, mini3) ──────────────',
+          '# Open a terminal on each worker and run:',
+          'grove join',
+          '# Workers auto-discover via AirDrop/WiFi — no IPs required.',
+          '',
+          '# ── Single-machine test ─────────────────',
+          'grove run examples/distributed_train.py',
+          '',
+          '# ── Force TCP transport (same LAN) ──────',
+          'GROVE_TRANSPORT=tcp grove start train.py -n 3  # coordinator',
+          'GROVE_TRANSPORT=tcp grove join                 # each worker'
+        )
       }
     ],
     jetson: [
@@ -484,6 +592,32 @@
           '',
           'bash scripts/installations/setup_ssh.sh',
           'bash scripts/installations/setup.sh'
+        )
+      },
+      {
+        title: '.env & API Keys',
+        copy: 'Create a .env file at the repo root with your Weights & Biases and Hugging Face credentials. Copy it to every Jetson via scp — setup.sh expects this file to be present on all nodes.',
+        command: lines(
+          '# Create .env at repo root (controller):',
+          'cat > .env << \'EOF\'',
+          'WANDB_API_KEY=your_wandb_api_key_here',
+          'WANDB_PROJECT=smolcluster',
+          'WANDB_ENTITY=your_wandb_username',
+          'HF_TOKEN=your_huggingface_token_here',
+          'EOF',
+          '',
+          '# Get your keys:',
+          '# wandb.ai/authorize          → WANDB_API_KEY',
+          '# huggingface.co/settings/tokens → HF_TOKEN',
+          '',
+          '# Distribute .env to all Jetsons:',
+          'awk \'/^[[:space:]]*-[[:space:]]*alias:/ {print $3}\' \\',
+          '  ~/.config/smolcluster/nodes.yaml | while read -r node; do',
+          '  scp .env "$node:~/Desktop/smolcluster/"',
+          'done',
+          '',
+          '# Keep it out of git:',
+          'grep -qxF ".env" .gitignore || echo ".env" >> .gitignore'
         )
       },
       {
@@ -544,6 +678,40 @@
           '# http://localhost:9090',
           '# http://<controller-hostname>.local:9090  ← from the network'
         )
+      },
+      {
+        title: 'grove TUI',
+        copy: 'grove gives you an easier setup to run distributed training with live terminal dashboards. Install grove on each Jetson, then start on the coordinator — workers auto-discover via mDNS on the shared subnet, no IPs needed.',
+        command: lines(
+          '# ── If you skipped earlier steps, start here: ───────────',
+          '# Clone the repo and set up the environment on each Jetson:',
+          'git clone https://github.com/YuvrajSingh-mist/smolcluster.git',
+          'cd smolcluster',
+          'uv sync          # creates .venv and installs all deps',
+          '# ────────────────────────────────────────────────────────',
+          '',
+          '# Install grove on each Jetson (run once, from smolcluster repo root):',
+          'source .venv/bin/activate',
+          'uv pip install -e grove/',
+          '',
+          '# ── Coordinator (controller node) ───────',
+          'GROVE_TRANSPORT=tcp grove start examples/train.py -n 3',
+          '',
+          '# ── Workers (each Jetson) ───────────────',
+          '# Open a terminal on each Jetson and run:',
+          'GROVE_TRANSPORT=tcp grove join',
+          '# Workers discover the coordinator via mDNS',
+          '# on the shared subnet (same WiFi) — no IPs required.',
+          '',
+          '# ── Pin to a specific cluster by name ───',
+          'GROVE_TRANSPORT=tcp grove join --cluster your_cluster_name',
+          '',
+          '# ── Single-Jetson test ──────────────────',
+          'grove run examples/train.py',
+          '',
+          '# TUI columns: Rank | Host | Status | Step',
+          '#              Loss | Grad | tok/s | Sync | Net Mb'
+        )
       }
     ]
   };
@@ -578,8 +746,14 @@
     const steps = setupTracks[activeTrack];
     const s = steps[activeStep];
     const trackLabel = activeTrack === 'mac' ? 'Mac Mini (Thunderbolt)' : 'Jetson / Home Router';
+    const isGrove = s.title === 'grove TUI';
 
-    document.getElementById('setup-kicker').textContent = `${trackLabel} • Step ${activeStep + 1}/${steps.length}`;
+    const kicker = document.getElementById('setup-kicker');
+    if (isGrove) {
+      kicker.textContent = '';
+    } else {
+      kicker.textContent = `${trackLabel} • Step ${activeStep + 1}/${steps.length}`;
+    }
     document.getElementById('setup-heading').textContent = s.title;
     document.getElementById('setup-copy-text').textContent = s.copy;
     document.getElementById('setup-command').textContent = s.command;
@@ -587,10 +761,15 @@
     const pct = Math.round(((activeStep + 1) / steps.length) * 100);
     document.getElementById('setup-progress-fill').style.width = pct + '%';
 
+    const main = document.querySelector('.setup-main');
+    main.classList.toggle('grove-active', isGrove);
+
     const list = document.getElementById('setup-steps-list');
-    list.innerHTML = steps.map((step, i) =>
-      `<div class="setup-step${i === activeStep ? ' active' : ''}" onclick="goToStep(${i})">${step.title}</div>`
-    ).join('');
+    list.innerHTML = steps.map((step, i) => {
+      const isG = step.title === 'grove TUI';
+      const cls = ['setup-step', isG ? 'grove-step' : '', i === activeStep ? 'active' : ''].filter(Boolean).join(' ');
+      return `<div class="${cls}" onclick="goToStep(${i})">${step.title}</div>`;
+    }).join('');
 
     const btn = document.getElementById('copy-btn');
     btn.textContent = 'Copy';

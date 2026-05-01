@@ -520,7 +520,7 @@
           '',
           '# Install grove on each Mac (run once, from smolcluster repo root):',
           'source .venv/bin/activate',
-          'uv pip install -e grove/',
+          'cd ../grove && uv pip install -e .',
 
           '',
           '# ── Coordinator (mini1) ─────────────────',
@@ -692,7 +692,7 @@
           '',
           '# Install grove on each Jetson (run once, from smolcluster repo root):',
           'source .venv/bin/activate',
-          'uv pip install -e grove/',
+          'cd ../grove && uv pip install -e .',
           '',
           '# ── Coordinator (controller node) ───────',
           'GROVE_TRANSPORT=tcp grove start examples/train.py -n 3',

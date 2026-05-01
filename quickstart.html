@@ -524,7 +524,7 @@
 
           '',
           '# ── Coordinator (mini1) ─────────────────',
-          'grove start examples/distributed_train.py -n 3',
+          'cd ../ && grove start train.py -n 3',
           '# or for a custom script:',
           'grove start train.py -n 3',
           '',
@@ -533,11 +533,8 @@
           'grove join',
           '# Workers auto-discover via AirDrop/WiFi — no IPs required.',
           '',
-          '# ── Single-machine test ─────────────────',
-          'grove run examples/distributed_train.py',
-          '',
           '# ── Force TCP transport (same LAN) ──────',
-          'GROVE_TRANSPORT=tcp grove start examples/distributed_train.py -n 3  # coordinator',
+          'GROVE_TRANSPORT=tcp cd ../ && grove start train.py -n 3  # coordinator',
           'GROVE_TRANSPORT=tcp grove join                 # each worker'
         )
       }
@@ -695,7 +692,7 @@
           'cd ../grove && uv pip install -e .',
           '',
           '# ── Coordinator (controller node) ───────',
-          'GROVE_TRANSPORT=tcp grove start examples/distributed_train.py -n 3',
+          'GROVE_TRANSPORT=tcp cd ../ && grove start train.py -n 3',
           '',
           '# ── Workers (each Jetson) ───────────────',
           '# Open a terminal on each Jetson and run:',
@@ -705,9 +702,6 @@
           '',
           '# ── Pin to a specific cluster by name ───',
           'GROVE_TRANSPORT=tcp grove join --cluster your_cluster_name',
-          '',
-          '# ── Single-Jetson test ──────────────────',
-          'grove run examples/distributed_train.py',
           '',
           '# TUI columns: Rank | Host | Status | Step',
           '#              Loss | Grad | tok/s | Sync | Net Mb'

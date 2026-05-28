@@ -8,13 +8,65 @@
   <meta name="description" content="smolcluster: Open-source distributed deep learning library for training neural networks across heterogeneous hardware (Mac minis, Raspberry Pi, GPUs). Features FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, GPT-2 inference, and socket-based PyTorch communication.">
   <meta name="keywords" content="smolcluster, distributed deep learning, distributed training, PyTorch distributed, heterogeneous hardware, model parallelism, data parallelism, FSDP, ZeRO, EDP, parameter server, distributed inference, GPT-2 distributed, Mac mini cluster">
   <meta name="author" content="Yuvraj Singh">
-  <link rel="canonical" href="https://smolcluster.com/">
+  <link rel="canonical" href="https://www.smolcluster.com/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://smolcluster.com/">
+  <meta property="og:url" content="https://www.smolcluster.com/">
   <meta property="og:title" content="smolcluster — Distributed Deep Learning Library for Heterogeneous Hardware">
   <meta property="og:description" content="Open-source distributed deep learning library for training neural networks across heterogeneous hardware. FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, GPT-2 inference.">
-  <meta property="og:image" content="https://smolcluster.com/static/images/architecture.png">
+  <meta property="og:image" content="https://www.smolcluster.com/static/images/architecture.png">
+  <meta property="og:site_name" content="smolcluster">
   <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="smolcluster — Distributed Deep Learning on Heterogeneous Hardware">
+  <meta property="twitter:description" content="Train neural networks across Mac minis, Raspberry Pis, and GPUs using only Python sockets. FSDP, EDP, Model Parallelism — no NCCL, no MPI.">
+  <meta property="twitter:image" content="https://www.smolcluster.com/static/images/architecture.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.smolcluster.com/#website",
+        "url": "https://www.smolcluster.com/",
+        "name": "smolcluster",
+        "description": "Distributed Deep Learning Library for Heterogeneous Hardware",
+        "publisher": {
+          "@type": "Person",
+          "name": "Yuvraj Singh",
+          "url": "https://github.com/YuvrajSingh-mist"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.smolcluster.com/#software",
+        "name": "smolcluster",
+        "url": "https://www.smolcluster.com/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Linux, Windows",
+        "description": "Open-source distributed deep learning library for training and serving neural networks across heterogeneous hardware including Mac minis, Raspberry Pis, and GPUs. Implements FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, and Expert Parallelism using raw Python sockets — no NCCL or MPI required.",
+        "codeRepository": "https://github.com/YuvrajSingh-mist/smolcluster",
+        "license": "https://opensource.org/licenses/MIT",
+        "programmingLanguage": "Python",
+        "author": {
+          "@type": "Person",
+          "name": "Yuvraj Singh",
+          "url": "https://github.com/YuvrajSingh-mist"
+        },
+        "keywords": "distributed deep learning, PyTorch distributed, heterogeneous hardware, FSDP, model parallelism, data parallelism, Mac mini cluster, home cluster, socket-based training"
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://www.youtube.com/watch?v=Jp0ptkampk8",
+        "name": "Distributed GPT-2 Inference with Model Parallelism — smolcluster Demo",
+        "description": "Demonstration of distributed GPT-2 inference using model parallelism across two Mac Mini M4 nodes with real-time streaming token generation.",
+        "thumbnailUrl": "https://img.youtube.com/vi/Jp0ptkampk8/maxresdefault.jpg",
+        "uploadDate": "2026-02-15",
+        "embedUrl": "https://www.youtube.com/embed/Jp0ptkampk8",
+        "contentUrl": "https://www.youtube.com/watch?v=Jp0ptkampk8"
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -310,14 +362,15 @@
 </head>
 <body>
 
-<nav>
+<nav aria-label="Main navigation">
   <span class="nav-title">smolcluster</span>
   <div class="nav-links">
-    <a href="https://github.com/YuvrajSingh-mist/smolcluster" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/YuvrajSingh-mist/smolcluster" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="./quickstart.html">Quick Start</a>
   </div>
 </nav>
 
+<main>
 <div class="hero">
   <div class="container">
     <h1>smolcluster</h1>
@@ -337,9 +390,9 @@
 </div>
 
 <!-- ── Overview ── -->
-<section>
+<section id="overview" aria-labelledby="heading-overview">
   <div class="container">
-    <h2 class="section-title">Overview</h2>
+    <h2 class="section-title" id="heading-overview">Overview</h2>
     <div class="prose">
       <p>
         <strong>smolcluster</strong> is a distributed deep learning library designed for training neural networks
@@ -357,9 +410,9 @@
 </section>
 
 <!-- ── Training Algorithms ── -->
-<section>
+<section id="algorithms" aria-labelledby="heading-algorithms">
   <div class="container">
-    <h2 class="section-title">Training Algorithms</h2>
+    <h2 class="section-title" id="heading-algorithms">Training Algorithms</h2>
     <table>
       <thead>
         <tr>
@@ -401,9 +454,9 @@
 </section>
 
 <!-- ── Architecture ── -->
-<section>
+<section id="architecture" aria-labelledby="heading-architecture">
   <div class="container">
-    <h2 class="section-title">Cluster Architecture</h2>
+    <h2 class="section-title" id="heading-architecture">Cluster Architecture</h2>
     <img src="./static/images/architecture.png"
          alt="smolcluster distributed deep learning architecture diagram"
          class="arch-img"
@@ -413,9 +466,9 @@
 </section>
 
 <!-- ── Quick Start ── -->
-<section>
+<section id="quickstart" aria-labelledby="heading-quickstart">
   <div class="container">
-    <h2 class="section-title">Quick Start</h2>
+    <h2 class="section-title" id="heading-quickstart">Quick Start</h2>
     <div class="prose">
       <p>Step-by-step setup guide for Mac Mini (Thunderbolt) and Jetson / home router clusters, with commands ready to copy.</p>
     </div>
@@ -438,9 +491,9 @@ bash scripts/inference/launch_api.sh</code></pre>
 </section>
 
 <!-- ── Key Features ── -->
-<section>
+<section id="features" aria-labelledby="heading-features">
   <div class="container">
-    <h2 class="section-title">Key Features</h2>
+    <h2 class="section-title" id="heading-features">Key Features</h2>
 
     <h3 class="subsection-title">Distributed Training Algorithms</h3>
     <div class="prose">
@@ -494,9 +547,9 @@ bash scripts/inference/launch_api.sh</code></pre>
 </section>
 
 <!-- ── Demo ── -->
-<section>
+<section id="demo" aria-labelledby="heading-demo">
   <div class="container">
-    <h2 class="section-title">Demo</h2>
+    <h2 class="section-title" id="heading-demo">Demo</h2>
     <div class="video-wrap">
       <iframe src="https://www.youtube.com/embed/Jp0ptkampk8"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -570,9 +623,9 @@ bash scripts/inference/launch_api.sh</code></pre>
 </section>
 
 <!-- ── Technical Details ── -->
-<section>
+<section id="technical" aria-labelledby="heading-technical">
   <div class="container">
-    <h2 class="section-title">Technical Details</h2>
+    <h2 class="section-title" id="heading-technical">Technical Details</h2>
     <div class="prose">
       <p>smolcluster implements a distributed training system designed from the ground up for heterogeneous hardware. The library supports multiple distributed training paradigms, each optimized for different cluster configurations and network topologies.</p>
 
@@ -617,9 +670,9 @@ bash scripts/inference/launch_api.sh</code></pre>
 </section>
 
 <!-- ── Documentation ── -->
-<section>
+<section id="docs" aria-labelledby="heading-docs">
   <div class="container">
-    <h2 class="section-title">Documentation</h2>
+    <h2 class="section-title" id="heading-docs">Documentation</h2>
     <p style="color: var(--text-sec); font-size: 0.95rem; margin-bottom: 1.25rem;">Comprehensive guides to help you get the most out of smolcluster:</p>
     <ul class="docs-list">
       <li>
@@ -661,12 +714,13 @@ bash scripts/inference/launch_api.sh</code></pre>
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="container">
     <div class="footer-links">
-      <a href="https://github.com/YuvrajSingh-mist/smolcluster" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://smolhub.com" target="_blank" rel="noopener">smolhub.com</a>
-      <a href="https://smolhub.com/talks/project-smolcluster/" target="_blank" rel="noopener">Project page</a>
+      <a href="https://github.com/YuvrajSingh-mist/smolcluster" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="./quickstart.html">Quick Start</a>
     </div>
     <p><strong>smolcluster</strong> &nbsp;&middot;&nbsp; Distributed Deep Learning Library for Heterogeneous Hardware &nbsp;&middot;&nbsp; MIT License</p>
   </div>

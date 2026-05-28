@@ -2,22 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  
+
   <!-- Main page -->
   <url>
-    <loc>https://yuvrajsingh-mist.github.io/smolcluster-web/</loc>
+    <loc>https://www.smolcluster.com/</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    
-    <!-- Image in sitemap for better image SEO -->
+
     <image:image>
-      <image:loc>https://yuvrajsingh-mist.github.io/smolcluster-web/static/images/architecture.png</image:loc>
+      <image:loc>https://www.smolcluster.com/static/images/architecture.png</image:loc>
       <image:title>smolcluster Distributed Deep Learning Architecture</image:title>
       <image:caption>Architecture diagram showing heterogeneous hardware cluster for distributed PyTorch training</image:caption>
     </image:image>
-    
-    <!-- Video in sitemap -->
+
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/Jp0ptkampk8/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>smolcluster - Distributed GPT-2 Inference Demo</video:title>
@@ -30,13 +28,13 @@
       <video:requires_subscription>no</video:requires_subscription>
     </video:video>
   </url>
-  
-  <!-- GitHub repository as external reference -->
+
+  <!-- Quickstart page -->
   <url>
-    <loc>https://github.com/YuvrajSingh-mist/smolcluster</loc>
+    <loc>https://www.smolcluster.com/quickstart.html</loc>
     <lastmod>2026-02-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-  
+
 </urlset>

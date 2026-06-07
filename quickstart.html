@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quick Start — smolcluster Distributed Deep Learning Setup</title>
+  <title>Quick Start  -  smolcluster Distributed Deep Learning Setup</title>
   <meta name="description" content="Step-by-step setup guide for smolcluster: configure a distributed deep learning cluster across Mac minis, Raspberry Pis, and other hardware. Covers Thunderbolt, Ethernet, grove node discovery, and training launch.">
   <meta name="author" content="Yuvraj Singh">
   <link rel="canonical" href="https://www.smolcluster.com/quickstart.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.smolcluster.com/quickstart.html">
-  <meta property="og:title" content="Quick Start — smolcluster Distributed Deep Learning Setup">
+  <meta property="og:title" content="Quick Start  -  smolcluster Distributed Deep Learning Setup">
   <meta property="og:description" content="Step-by-step setup guide for smolcluster: configure a distributed deep learning cluster across Mac minis, Raspberry Pis, and other hardware.">
   <meta property="og:image" content="https://www.smolcluster.com/static/images/architecture.png">
   <meta property="og:site_name" content="smolcluster">
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Quick Start — smolcluster Setup Guide">
+  <meta property="twitter:title" content="Quick Start  -  smolcluster Setup Guide">
   <meta property="twitter:description" content="Configure a distributed deep learning cluster across Mac minis and Raspberry Pis in minutes.">
   <meta property="twitter:image" content="https://www.smolcluster.com/static/images/architecture.png">
 
@@ -22,7 +22,7 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "smolcluster Quick Start — Cluster Setup Guide",
+    "headline": "smolcluster Quick Start  -  Cluster Setup Guide",
     "description": "Step-by-step instructions for setting up a smolcluster distributed deep learning cluster across heterogeneous hardware including Mac minis and Raspberry Pis.",
     "url": "https://www.smolcluster.com/quickstart.html",
     "image": "https://www.smolcluster.com/static/images/architecture.png",
@@ -544,7 +544,7 @@
       },
       {
         title: 'grove TUI',
-        copy: 'grove gives you an easier setup to run distributed training with live terminal dashboards. Install grove on each Jetson, then start on the coordinator — workers auto-discover via mDNS on the shared subnet, no IPs needed.',
+        copy: 'grove gives you an easier setup to run distributed training with live terminal dashboards. Install grove on each Jetson, then start on the coordinator  -  workers auto-discover via mDNS on the shared subnet, no IPs needed.',
         command: lines(
           '# ── If you skipped earlier steps, start here: ───────────',
           '# Clone the repo and set up the environment on each node:',
@@ -566,7 +566,7 @@
           '# ── Workers (mini2, mini3) ──────────────',
           '# Open a terminal on each worker and run:',
           'grove join',
-          '# Workers auto-discover via AirDrop/WiFi — no IPs required.',
+          '# Workers auto-discover via AirDrop/WiFi  -  no IPs required.',
           '',
           '# ── Force TCP transport (same LAN) ──────',
           'GROVE_TRANSPORT=tcp cd ../src/smolcluster && grove start train.py -n 3  # coordinator',
@@ -628,7 +628,7 @@
       },
       {
         title: '.env & API Keys',
-        copy: 'Create a .env file at the repo root with your Weights & Biases and Hugging Face credentials. Copy it to every Jetson via scp — setup.sh expects this file to be present on all nodes.',
+        copy: 'Create a .env file at the repo root with your Weights & Biases and Hugging Face credentials. Copy it to every Jetson via scp  -  setup.sh expects this file to be present on all nodes.',
         command: lines(
           '# Create .env at repo root (controller):',
           'cat > .env << \'EOF\'',
@@ -713,7 +713,7 @@
       },
       {
         title: 'grove TUI',
-        copy: 'grove gives you an easier setup to run distributed training with live terminal dashboards. Install grove on each Jetson, then start on the coordinator — workers auto-discover via mDNS on the shared subnet, no IPs needed.',
+        copy: 'grove gives you an easier setup to run distributed training with live terminal dashboards. Install grove on each Jetson, then start on the coordinator  -  workers auto-discover via mDNS on the shared subnet, no IPs needed.',
         command: lines(
           '# ── If you skipped earlier steps, start here: ───────────',
           '# Clone the repo and set up the environment on each Jetson:',
@@ -733,7 +733,7 @@
           '# Open a terminal on each Jetson and run:',
           'GROVE_TRANSPORT=tcp grove join',
           '# Workers discover the coordinator via mDNS',
-          '# on the shared subnet (same WiFi) — no IPs required.',
+          '# on the shared subnet (same WiFi)  -  no IPs required.',
           '',
           '# ── Pin to a specific cluster by name ───',
           'GROVE_TRANSPORT=tcp grove join --cluster your_cluster_name',

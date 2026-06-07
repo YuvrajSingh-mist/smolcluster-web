@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="gXD0aR7d3e0bRZNdFV_tBasjmEDpzdK2v6EGqk2rCUs" />
-  <title>smolcluster — Distributed Deep Learning Library for Heterogeneous Hardware</title>
+  <title>smolcluster  -  Distributed Deep Learning Library for Heterogeneous Hardware</title>
   <meta name="description" content="smolcluster: Open-source distributed deep learning library for training neural networks across heterogeneous hardware (Mac minis, Raspberry Pi, GPUs). Features FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, GPT-2 inference, and socket-based PyTorch communication.">
   <meta name="keywords" content="smolcluster, distributed deep learning, distributed training, PyTorch distributed, heterogeneous hardware, model parallelism, data parallelism, FSDP, ZeRO, EDP, parameter server, distributed inference, GPT-2 distributed, Mac mini cluster">
   <meta name="author" content="Yuvraj Singh">
   <link rel="canonical" href="https://www.smolcluster.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.smolcluster.com/">
-  <meta property="og:title" content="smolcluster — Distributed Deep Learning Library for Heterogeneous Hardware">
+  <meta property="og:title" content="smolcluster  -  Distributed Deep Learning Library for Heterogeneous Hardware">
   <meta property="og:description" content="Open-source distributed deep learning library for training neural networks across heterogeneous hardware. FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, GPT-2 inference.">
   <meta property="og:image" content="https://www.smolcluster.com/static/images/architecture.png">
   <meta property="og:site_name" content="smolcluster">
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="smolcluster — Distributed Deep Learning on Heterogeneous Hardware">
-  <meta property="twitter:description" content="Train neural networks across Mac minis, Raspberry Pis, and GPUs using only Python sockets. FSDP, EDP, Model Parallelism — no NCCL, no MPI.">
+  <meta property="twitter:title" content="smolcluster  -  Distributed Deep Learning on Heterogeneous Hardware">
+  <meta property="twitter:description" content="Train neural networks across Mac minis, Raspberry Pis, and GPUs using only Python sockets. FSDP, EDP, Model Parallelism  -  no NCCL, no MPI.">
   <meta property="twitter:image" content="https://www.smolcluster.com/static/images/architecture.png">
 
   <script type="application/ld+json">
@@ -43,7 +43,7 @@
         "url": "https://www.smolcluster.com/",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "macOS, Linux, Windows",
-        "description": "Open-source distributed deep learning library for training and serving neural networks across heterogeneous hardware including Mac minis, Raspberry Pis, and GPUs. Implements FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, and Expert Parallelism using raw Python sockets — no NCCL or MPI required.",
+        "description": "Open-source distributed deep learning library for training and serving neural networks across heterogeneous hardware including Mac minis, Raspberry Pis, and GPUs. Implements FSDP, ClassicDP, EDP, SyncPS, Model Parallelism, and Expert Parallelism using raw Python sockets  -  no NCCL or MPI required.",
         "codeRepository": "https://github.com/YuvrajSingh-mist/smolcluster",
         "license": "https://opensource.org/licenses/MIT",
         "programmingLanguage": "Python",
@@ -57,7 +57,7 @@
       {
         "@type": "VideoObject",
         "@id": "https://www.youtube.com/watch?v=Jp0ptkampk8",
-        "name": "Distributed GPT-2 Inference with Model Parallelism — smolcluster Demo",
+        "name": "Distributed GPT-2 Inference with Model Parallelism  -  smolcluster Demo",
         "description": "Demonstration of distributed GPT-2 inference using model parallelism across two Mac Mini M4 nodes with real-time streaming token generation.",
         "thumbnailUrl": "https://img.youtube.com/vi/Jp0ptkampk8/maxresdefault.jpg",
         "uploadDate": "2026-02-15",
@@ -266,7 +266,7 @@
       color: var(--text-sec) !important;
       text-shadow: none !important;
     }
-    /* Syntax token colors — warm palette */
+    /* Syntax token colors  -  warm palette */
     pre[class*="language-"] .token.comment,
     pre[class*="language-"] .token.prolog { color: var(--text-ter) !important; font-style: italic; }
     pre[class*="language-"] .token.keyword,
@@ -376,7 +376,7 @@
     <h1>smolcluster</h1>
     <p class="hero-subtitle">Distributed Deep Learning Library for Heterogeneous Hardware</p>
     <p class="hero-desc">
-      Train and serve neural networks across Mac minis, Raspberry Pis, MacBooks, and Windows machines — using only Python's socket library. No NCCL, no MPI, no infrastructure assumptions.
+      Train and serve neural networks across Mac minis, Raspberry Pis, MacBooks, and Windows machines  -  using only Python's socket library. No NCCL, no MPI, no infrastructure assumptions.
     </p>
     <div class="hero-btns">
       <a href="https://github.com/YuvrajSingh-mist/smolcluster" class="btn btn-primary" target="_blank" rel="noopener">
@@ -423,32 +423,32 @@
       <tbody>
         <tr>
           <td>FSDP (ZeRO Stage 0/1)</td>
-          <td>Memory-constrained nodes — ZeRO Stage 1 gives ~1/N memory per worker via optimizer state partitioning</td>
+          <td>Memory-constrained nodes  -  ZeRO Stage 1 gives ~1/N memory per worker via optimizer state partitioning</td>
         </tr>
         <tr>
           <td>ClassicDP (All-Reduce)</td>
-          <td>Balanced clusters — ring all-reduce gradient averaging with configurable bounded staleness</td>
+          <td>Balanced clusters  -  ring all-reduce gradient averaging with configurable bounded staleness</td>
         </tr>
         <tr>
           <td>EDP (Elastic DP)</td>
-          <td>Heterogeneous clusters — async with stale gradient tolerance, resilient to stragglers</td>
+          <td>Heterogeneous clusters  -  async with stale gradient tolerance, resilient to stragglers</td>
         </tr>
         <tr>
           <td>SyncPS (Parameter Server)</td>
-          <td>Homogeneous clusters — barrier-based synchronization, strict consistency</td>
+          <td>Homogeneous clusters  -  barrier-based synchronization, strict consistency</td>
         </tr>
         <tr>
           <td>Expert Parallelism</td>
-          <td>MoE models — distributed expert assignment with load balancing across nodes</td>
+          <td>MoE models  -  distributed expert assignment with load balancing across nodes</td>
         </tr>
         <tr>
           <td>Model Parallelism</td>
-          <td>Large model inference — layer-wise distribution with streaming token generation</td>
+          <td>Large model inference  -  layer-wise distribution with streaming token generation</td>
         </tr>
       </tbody>
     </table>
     <p style="margin-top: 1rem; font-size: 0.87rem; color: var(--text-ter);">
-      All algorithms support configurable bounded staleness — K=0 for strict sync, K&gt;0 for async up to K steps.
+      All algorithms support configurable bounded staleness  -  K=0 for strict sync, K&gt;0 for async up to K steps.
     </p>
   </div>
 </section>
@@ -498,31 +498,31 @@ bash scripts/inference/launch_api.sh</code></pre>
     <h3 class="subsection-title">Distributed Training Algorithms</h3>
     <div class="prose">
       <ul>
-        <li><strong>Fully Sharded Data Parallelism (FSDP)</strong> — ZeRO-optimized data parallelism with configurable optimizer state partitioning. Supports Stage 0 (All-Reduce) and Stage 1 (ZeRO optimizer partitioning) for ~1/N memory reduction. Includes bounded staleness for flexible async training.</li>
-        <li><strong>Classic Data Parallelism (ClassicDP)</strong> — All-Reduce based data parallelism with bounded staleness control. Workers exchange gradients directly in a fully connected topology with configurable synchronization flexibility.</li>
-        <li><strong>Elastic Distributed Parallelism (EDP)</strong> — Asynchronous data parallelism with stale gradient tolerance, ideal for heterogeneous clusters.</li>
-        <li><strong>Model Parallelism (MP)</strong> — Layer-wise model distribution perfect for large models and inference serving.</li>
-        <li><strong>Model Parallelism with Pipeline (MPPipeline)</strong> — Pipeline-based model parallelism with inter-layer communication and overlapped computation for improved throughput and reduced latency during inference.</li>
-        <li><strong>Expert Parallelism (EP)</strong> — Sparse mixture-of-experts (MoE) training with distributed expert assignment across nodes. Enables training of large sparse models with efficient expert routing and load balancing.</li>
+        <li><strong>Fully Sharded Data Parallelism (FSDP)</strong>  -  ZeRO-optimized data parallelism with configurable optimizer state partitioning. Supports Stage 0 (All-Reduce) and Stage 1 (ZeRO optimizer partitioning) for ~1/N memory reduction. Includes bounded staleness for flexible async training.</li>
+        <li><strong>Classic Data Parallelism (ClassicDP)</strong>  -  All-Reduce based data parallelism with bounded staleness control. Workers exchange gradients directly in a fully connected topology with configurable synchronization flexibility.</li>
+        <li><strong>Elastic Distributed Parallelism (EDP)</strong>  -  Asynchronous data parallelism with stale gradient tolerance, ideal for heterogeneous clusters.</li>
+        <li><strong>Model Parallelism (MP)</strong>  -  Layer-wise model distribution perfect for large models and inference serving.</li>
+        <li><strong>Model Parallelism with Pipeline (MPPipeline)</strong>  -  Pipeline-based model parallelism with inter-layer communication and overlapped computation for improved throughput and reduced latency during inference.</li>
+        <li><strong>Expert Parallelism (EP)</strong>  -  Sparse mixture-of-experts (MoE) training with distributed expert assignment across nodes. Enables training of large sparse models with efficient expert routing and load balancing.</li>
       </ul>
     </div>
 
     <h3 class="subsection-title">Distributed Inference</h3>
     <div class="callout">
-      <strong>&#9733; Zero-Config Node Discovery via grove</strong> —
+      <strong>&#9733; Zero-Config Node Discovery via grove</strong>  - 
       <a href="https://github.com/swarnim-j/grove" target="_blank" rel="noopener">grove</a>
       (built by <a href="https://github.com/swarnim-j" target="_blank" rel="noopener">Swarnim Jain</a>, integrated into smolcluster)
-      handles automatic node discovery over mDNS on Mac and TCP + Zeroconf on Linux/Jetson — no SSH, no static IPs needed.
+      handles automatic node discovery over mDNS on Mac and TCP + Zeroconf on Linux/Jetson  -  no SSH, no static IPs needed.
       Includes a live per-rank TUI dashboard. Launch with <code>grove start &lt;script&gt; -n N</code> on the coordinator
       and <code>grove join</code> on each worker.
     </div>
     <div class="prose">
       <ul>
-        <li><strong>Supported Inference Algorithms</strong> — Pipeline Parallelism and Data Parallelism (DP).</li>
-        <li><strong>Streaming Token Generation</strong> — Real-time token-by-token generation with activations forwarded sequentially through distributed layers.</li>
-        <li><strong>FastAPI Backend</strong> — RESTful API server for easy integration with web and mobile clients (iPad, browsers, etc.).</li>
-        <li><strong>Multi-Device Support</strong> — Serve models across heterogeneous hardware (Mac minis, Raspberry Pis) with automatic activation routing.</li>
-        <li><strong>Interactive Chat Interface</strong> — React-based web UI and iOS Swift app for real-time interaction with distributed models.</li>
+        <li><strong>Supported Inference Algorithms</strong>  -  Pipeline Parallelism and Data Parallelism (DP).</li>
+        <li><strong>Streaming Token Generation</strong>  -  Real-time token-by-token generation with activations forwarded sequentially through distributed layers.</li>
+        <li><strong>FastAPI Backend</strong>  -  RESTful API server for easy integration with web and mobile clients (iPad, browsers, etc.).</li>
+        <li><strong>Multi-Device Support</strong>  -  Serve models across heterogeneous hardware (Mac minis, Raspberry Pis) with automatic activation routing.</li>
+        <li><strong>Interactive Chat Interface</strong>  -  React-based web UI and iOS Swift app for real-time interaction with distributed models.</li>
       </ul>
     </div>
 
@@ -539,8 +539,8 @@ bash scripts/inference/launch_api.sh</code></pre>
     <h3 class="subsection-title">Monitoring &amp; Logging</h3>
     <div class="prose">
       <ul>
-        <li><strong>Weights &amp; Biases Integration</strong> — Automatic tracking of training metrics, gradient norms, and hardware utilization.</li>
-        <li><strong>Web Interface</strong> — React-based chat UI for GPT inference with real-time streaming responses.</li>
+        <li><strong>Weights &amp; Biases Integration</strong>  -  Automatic tracking of training metrics, gradient norms, and hardware utilization.</li>
+        <li><strong>Web Interface</strong>  -  React-based chat UI for GPT inference with real-time streaming responses.</li>
       </ul>
     </div>
   </div>
@@ -602,7 +602,7 @@ bash scripts/inference/launch_api.sh</code></pre>
       </div>
     </div>
 
-    <!-- grove — centered solo -->
+    <!-- grove  -  centered solo -->
     <div style="max-width: calc(50% - 1rem); margin: 2.5rem auto 0;">
       <div class="video-wrap">
         <iframe src="https://www.youtube.com/embed/7qqZSwVO0OM"
@@ -611,7 +611,7 @@ bash scripts/inference/launch_api.sh</code></pre>
         </iframe>
       </div>
       <div class="video-caption" style="text-align: center;">
-        <strong>grove — Zero-Config Cluster Discovery</strong>
+        <strong>grove  -  Zero-Config Cluster Discovery</strong>
         <ul style="list-style: none; padding: 0; margin-top: 0.4rem;">
           <li>Package by <a href="https://github.com/swarnim-j" target="_blank" rel="noopener">Swarnim Jain</a>, integrated into smolcluster</li>
           <li>Auto node discovery over mDNS (Mac) / TCP + Zeroconf (Linux)</li>
@@ -631,39 +631,39 @@ bash scripts/inference/launch_api.sh</code></pre>
 
       <h3 class="subsection-title" style="margin-top: 1rem;">Communication Infrastructure</h3>
       <ul>
-        <li><strong>Socket-based Communication</strong> — Raw TCP sockets for reliable, low-level control over gradient and activation transfers between nodes. No dependency on MPI or specialized networking libraries.</li>
-        <li><strong>Pickle Serialization</strong> — PyTorch tensors serialized with pickle for efficient network transmission, with optional gradient quantization for bandwidth reduction.</li>
-        <li><strong>Asynchronous I/O</strong> — Non-blocking socket operations enable workers to compute while waiting for network transfers in EDP mode.</li>
+        <li><strong>Socket-based Communication</strong>  -  Raw TCP sockets for reliable, low-level control over gradient and activation transfers between nodes. No dependency on MPI or specialized networking libraries.</li>
+        <li><strong>Pickle Serialization</strong>  -  PyTorch tensors serialized with pickle for efficient network transmission, with optional gradient quantization for bandwidth reduction.</li>
+        <li><strong>Asynchronous I/O</strong>  -  Non-blocking socket operations enable workers to compute while waiting for network transfers in EDP mode.</li>
       </ul>
 
       <h3 class="subsection-title">Distributed Training Modes</h3>
       <ul>
-        <li><strong>Elastic Distributed Parallelism (EDP)</strong> — Workers train independently with stale gradient tolerance. The parameter server accepts gradients from any model version, making it resilient to stragglers and network latency variance. Workers periodically pull the latest weights without synchronization barriers.</li>
-        <li><strong>Model Parallelism</strong> — Sequential layer distribution across nodes with activation forwarding. Enables training and inference of models exceeding single-device memory. Each worker holds a subset of layers and forwards activations to the next rank.</li>
-        <li><strong>Pipeline Model Parallelism</strong> — Temporal pipeline parallelism with multiple microbatches in-flight across stages. Reduces bubble size and improves GPU/device utilization during training of large models.</li>
-        <li><strong>Expert Parallelism</strong> — Distributed training of mixture-of-experts models with expert placement across nodes. Enables efficient training of sparse models with dynamic expert routing and load balancing across heterogeneous devices.</li>
+        <li><strong>Elastic Distributed Parallelism (EDP)</strong>  -  Workers train independently with stale gradient tolerance. The parameter server accepts gradients from any model version, making it resilient to stragglers and network latency variance. Workers periodically pull the latest weights without synchronization barriers.</li>
+        <li><strong>Model Parallelism</strong>  -  Sequential layer distribution across nodes with activation forwarding. Enables training and inference of models exceeding single-device memory. Each worker holds a subset of layers and forwards activations to the next rank.</li>
+        <li><strong>Pipeline Model Parallelism</strong>  -  Temporal pipeline parallelism with multiple microbatches in-flight across stages. Reduces bubble size and improves GPU/device utilization during training of large models.</li>
+        <li><strong>Expert Parallelism</strong>  -  Distributed training of mixture-of-experts models with expert placement across nodes. Enables efficient training of sparse models with dynamic expert routing and load balancing across heterogeneous devices.</li>
       </ul>
 
       <h3 class="subsection-title">Data Management</h3>
       <ul>
-        <li><strong>Automatic Data Partitioning</strong> — Dataset automatically sharded across workers based on global rank and world size, ensuring no data overlap.</li>
-        <li><strong>Deterministic Shuffling</strong> — Seeded random number generators ensure reproducible data ordering across runs.</li>
-        <li><strong>Streaming Support</strong> — Memory-efficient data loading for large datasets with PyTorch DataLoader integration.</li>
+        <li><strong>Automatic Data Partitioning</strong>  -  Dataset automatically sharded across workers based on global rank and world size, ensuring no data overlap.</li>
+        <li><strong>Deterministic Shuffling</strong>  -  Seeded random number generators ensure reproducible data ordering across runs.</li>
+        <li><strong>Streaming Support</strong>  -  Memory-efficient data loading for large datasets with PyTorch DataLoader integration.</li>
       </ul>
 
       <h3 class="subsection-title">Fault Tolerance &amp; Monitoring</h3>
       <ul>
-        <li><strong>Checkpointing</strong> — Periodic model snapshots with configurable intervals. Supports resuming training from the latest checkpoint after failures.</li>
-        <li><strong>Weights &amp; Biases Integration</strong> — Automatic logging of training metrics, gradient norms, per-layer statistics, and system metrics (GPU utilization, memory usage, network throughput).</li>
-        <li><strong>Timeout Handling</strong> — Configurable timeouts prevent deadlocks when workers fail or network partitions occur.</li>
+        <li><strong>Checkpointing</strong>  -  Periodic model snapshots with configurable intervals. Supports resuming training from the latest checkpoint after failures.</li>
+        <li><strong>Weights &amp; Biases Integration</strong>  -  Automatic logging of training metrics, gradient norms, per-layer statistics, and system metrics (GPU utilization, memory usage, network throughput).</li>
+        <li><strong>Timeout Handling</strong>  -  Configurable timeouts prevent deadlocks when workers fail or network partitions occur.</li>
       </ul>
 
       <h3 class="subsection-title">Performance Optimizations</h3>
       <ul>
-        <li><strong>Gradient Quantization</strong> — Optional 8-bit quantization reduces gradient transfer size by 4&times; with minimal accuracy impact.</li>
-        <li><strong>CPU-based Computation</strong> — Designed to utilize CPU cores on commodity hardware (Mac minis, Raspberry Pis) rather than requiring GPUs.</li>
-        <li><strong>Mixed Precision Training</strong> — FP16 automatic mixed precision support for compatible hardware to accelerate training.</li>
-        <li><strong>Gradient Accumulation</strong> — Simulates larger batch sizes by accumulating gradients over multiple micro-batches before updating.</li>
+        <li><strong>Gradient Quantization</strong>  -  Optional 8-bit quantization reduces gradient transfer size by 4&times; with minimal accuracy impact.</li>
+        <li><strong>CPU-based Computation</strong>  -  Designed to utilize CPU cores on commodity hardware (Mac minis, Raspberry Pis) rather than requiring GPUs.</li>
+        <li><strong>Mixed Precision Training</strong>  -  FP16 automatic mixed precision support for compatible hardware to accelerate training.</li>
+        <li><strong>Gradient Accumulation</strong>  -  Simulates larger batch sizes by accumulating gradients over multiple micro-batches before updating.</li>
       </ul>
     </div>
   </div>
@@ -677,27 +677,27 @@ bash scripts/inference/launch_api.sh</code></pre>
     <ul class="docs-list">
       <li>
         <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/setup_cluster.md" target="_blank" rel="noopener">Cluster Setup</a>
-        <span>— Hardware configuration, network topology, SSH setup</span>
+        <span> -  Hardware configuration, network topology, SSH setup</span>
       </li>
       <li>
         <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/networking.md" target="_blank" rel="noopener">Network Configuration</a>
-        <span>— Thunderbolt bridges, Ethernet, mDNS discovery</span>
+        <span> -  Thunderbolt bridges, Ethernet, mDNS discovery</span>
       </li>
       <li>
         <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/training.md" target="_blank" rel="noopener">Training Guide</a>
-        <span>— Algorithm comparison, launch scripts, hyperparameters</span>
+        <span> -  Algorithm comparison, launch scripts, hyperparameters</span>
       </li>
       <li>
         <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/configuration.md" target="_blank" rel="noopener">Configuration</a>
-        <span>— YAML config reference for cluster and model settings</span>
+        <span> -  YAML config reference for cluster and model settings</span>
       </li>
       <li>
         <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/inference.md" target="_blank" rel="noopener">Inference Guide</a>
-        <span>— Model parallelism, FastAPI server, streaming SSE</span>
+        <span> -  Model parallelism, FastAPI server, streaming SSE</span>
       </li>
       <li>
         <a href="https://github.com/YuvrajSingh-mist/smolcluster/blob/master/docs/logging.md" target="_blank" rel="noopener">Logging Setup</a>
-        <span>— Grafana + Loki distributed log aggregation</span>
+        <span> -  Grafana + Loki distributed log aggregation</span>
       </li>
     </ul>
   </div>
